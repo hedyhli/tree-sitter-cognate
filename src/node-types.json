@@ -102,11 +102,6 @@
     }
   },
   {
-    "type": "inline_comment",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "line_comment",
     "named": true,
     "fields": {}
@@ -189,6 +184,10 @@
   },
   {
     "type": "identifier",
+    "named": true
+  },
+  {
+    "type": "inline_comment",
     "named": true
   },
   {

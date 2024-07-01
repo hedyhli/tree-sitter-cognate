@@ -218,17 +218,8 @@
       ]
     },
     "inline_comment": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "PATTERN",
-          "value": "[a-z][ a-z0-9-?!'+/*>=<^]*[a-z-?!'+/*>=<^]"
-        },
-        {
-          "type": "PATTERN",
-          "value": "[a-z]"
-        }
-      ]
+      "type": "PATTERN",
+      "value": "[a-z][A-Za-z0-9-?!'+/*>=<^]*"
     },
     "identifier": {
       "type": "PATTERN",

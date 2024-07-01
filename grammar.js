@@ -44,8 +44,8 @@ module.exports = grammar({
 
     operator: $ => choice('+', '-', '*', '/', '>=', '<=', '<', '>', '=='),
     line_comment: $ => seq('~~', /[^\r\n]*/),
-    // TODO: Support A-Z after the initial a-z *and* spaces in between.
-    inline_comment: $ => choice(/[a-z][ a-z0-9-?!'+/*>=<^]*[a-z-?!'+/*>=<^]/, /[a-z]/),
+    // TODO: Join multiple inline comment words together (add a repeat1() here panics)
+    inline_comment: $ => /[a-z][A-Za-z0-9-?!'+/*>=<^]*/,
     identifier: $ => /[A-Z][a-zA-Z0-9-?!'+/*>=<^]*/,
     number: $ => /\d+/,
     string: $ => /".+"/,

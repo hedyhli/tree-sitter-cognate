@@ -12,7 +12,7 @@
 
 (fn_stmt (identifier) @function)
 
-(fn_stmt (identifier) @keyword (#any-of? @keyword "For" "Let" "Def" "When"))
+((identifier) @keyword (#any-of? @keyword "For" "Let" "Def" "When" "If" "Case" "When"))
 
 (def_stmt "Def" @keyword)
 (def_stmt name: _ @function)
