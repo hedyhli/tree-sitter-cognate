@@ -1,6 +1,7 @@
 ## Setup
 
 - `tree-sitter init-config`
+- `pnpm install`
 
 ## Development
 
