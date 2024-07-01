@@ -26,6 +26,7 @@ dist/
 *.so
 *.so.*
 *.dylib
+*.dylib*
 *.dll
 *.pc
 
