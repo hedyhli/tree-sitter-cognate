@@ -47,11 +47,12 @@ highlighting: <https://github.com/cognate-lang/cognate-vim>.
 
 ## TODO
 
-- Support symbols.
-- Support block comments.
-- Don't enforce "function" statements -- there's no such thing.
+- [ ] Support symbols.
+- [x] Support block comments.
+- [x] Don't enforce "function" statements -- there's no such thing.
   - Figure out whether to remove "functions" entirely, or treat all identifiers
     as functions.
+- [ ] Floating point numbers.
 
 ## References
 
