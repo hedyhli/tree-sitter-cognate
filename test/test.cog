@@ -1,2 +1,2 @@
-Print * 1 2 Do (+ 1 2);
-Print 1 2;
+Print ~a
+~

@@ -29,6 +29,6 @@ module.exports = grammar({
     line_comment: $ => seq('~~', /[^\r\n]*/),
     // TODO: Join multiple inline comment words together (adding a repeat1() here panics)
     inline_comment: $ => /[a-z][A-Za-z0-9-?!'+/*>=<^]*/,
-    multiline_comment: $ => seq('~', /[^°]+/, '~'),
+    multiline_comment: $ => seq('~', /[^~]+/, '~'),
   }
 });

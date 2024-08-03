@@ -1,0 +1,18 @@
+======
+Blocks
+======
+
+Print Do (+ 1 2);
+
+---
+
+(source_file
+  (statement
+    (identifier)
+    (identifier)
+    (block
+      (statement
+        (identifier)
+        (number)
+        (number)))))
+

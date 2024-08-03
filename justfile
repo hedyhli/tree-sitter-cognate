@@ -5,6 +5,12 @@ build:
   tree-sitter build
   make
 
+wasm:
+  tree-sitter build --wasm
+
+test:
+  tree-sitter test
+
 # Link queries and parser for neovim
 inspect-setup:
   #!/usr/bin/env bash

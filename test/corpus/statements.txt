@@ -1,0 +1,79 @@
+==========
+Statement
+==========
+
+Print;
+
+---
+
+(source_file
+  (statement
+    (identifier)))
+
+=======================
+Statement w/o semicolon
+=======================
+
+Print
+
+---
+
+(source_file
+  (statement
+    (identifier)))
+
+===========
+Statements
+===========
+
+Print;
+Print;
+Print;
+
+---
+
+(source_file
+  (statement
+    (identifier))
+  (statement
+    (identifier))
+  (statement
+    (identifier)))
+
+==============================
+Statements w/o last semicolon
+==============================
+
+Print;
+Print;
+Print
+
+---
+
+(source_file
+  (statement
+    (identifier))
+  (statement
+    (identifier))
+  (statement
+    (identifier)))
+
+================================
+Statements >1 literals & idents
+================================
+
+Print + 1 2;
+Print "abc";
+
+---
+
+(source_file
+  (statement
+    (identifier)
+    (identifier)
+    (number)
+    (number))
+  (statement
+    (identifier)
+    (string)))
+

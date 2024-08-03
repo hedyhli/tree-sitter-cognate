@@ -232,11 +232,11 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead == '(') ADVANCE(5);
       if (lookahead == ')') ADVANCE(6);
       if (lookahead == ';') ADVANCE(7);
-      if (lookahead == '~') ADVANCE(19);
+      if (lookahead == '~') ADVANCE(18);
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') SKIP(0);
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(9);
-      if (('a' <= lookahead && lookahead <= 'z')) ADVANCE(17);
+      if (('a' <= lookahead && lookahead <= 'z')) ADVANCE(16);
       if (lookahead == '!' ||
           ('\'' <= lookahead && lookahead <= '+') ||
           lookahead == '-' ||
@@ -251,12 +251,11 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != '\n') ADVANCE(1);
       END_STATE();
     case 2:
-      if (lookahead == '~') ADVANCE(21);
+      if (lookahead == '~') ADVANCE(18);
       if (('\t' <= lookahead && lookahead <= '\r') ||
-          lookahead == ' ') ADVANCE(22);
-      if (('a' <= lookahead && lookahead <= 'z')) ADVANCE(18);
-      if (lookahead != 0 &&
-          lookahead != 0xb0) ADVANCE(23);
+          lookahead == ' ') ADVANCE(20);
+      if (('a' <= lookahead && lookahead <= 'z')) ADVANCE(17);
+      if (lookahead != 0) ADVANCE(21);
       END_STATE();
     case 3:
       if (lookahead != 0 &&
@@ -295,77 +294,65 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       ACCEPT_TOKEN(anon_sym_TILDE_TILDE);
       if (lookahead != 0 &&
           lookahead != '\n' &&
-          lookahead != '\r') ADVANCE(16);
+          lookahead != '\r') ADVANCE(15);
       END_STATE();
     case 13:
-      ACCEPT_TOKEN(anon_sym_TILDE_TILDE);
-      if (lookahead != 0 &&
-          lookahead != 0xb0) ADVANCE(23);
-      END_STATE();
-    case 14:
       ACCEPT_TOKEN(aux_sym_line_comment_token1);
-      if (lookahead == '~') ADVANCE(20);
+      if (lookahead == '~') ADVANCE(19);
       if (lookahead == '\t' ||
           lookahead == 0x0b ||
           lookahead == '\f' ||
-          lookahead == ' ') ADVANCE(14);
-      if (('a' <= lookahead && lookahead <= 'z')) ADVANCE(15);
+          lookahead == ' ') ADVANCE(13);
+      if (('a' <= lookahead && lookahead <= 'z')) ADVANCE(14);
       if (lookahead != 0 &&
-          (lookahead < '\t' || '\r' < lookahead)) ADVANCE(16);
+          (lookahead < '\t' || '\r' < lookahead)) ADVANCE(15);
+      END_STATE();
+    case 14:
+      ACCEPT_TOKEN(aux_sym_line_comment_token1);
+      if (set_contains(sym_identifier_character_set_1, 9, lookahead)) ADVANCE(14);
+      if (lookahead != 0 &&
+          lookahead != '\n' &&
+          lookahead != '\r') ADVANCE(15);
       END_STATE();
     case 15:
       ACCEPT_TOKEN(aux_sym_line_comment_token1);
-      if (set_contains(sym_identifier_character_set_1, 9, lookahead)) ADVANCE(15);
       if (lookahead != 0 &&
           lookahead != '\n' &&
-          lookahead != '\r') ADVANCE(16);
+          lookahead != '\r') ADVANCE(15);
       END_STATE();
     case 16:
-      ACCEPT_TOKEN(aux_sym_line_comment_token1);
-      if (lookahead != 0 &&
-          lookahead != '\n' &&
-          lookahead != '\r') ADVANCE(16);
+      ACCEPT_TOKEN(sym_inline_comment);
+      if (set_contains(sym_identifier_character_set_1, 9, lookahead)) ADVANCE(16);
       END_STATE();
     case 17:
       ACCEPT_TOKEN(sym_inline_comment);
       if (set_contains(sym_identifier_character_set_1, 9, lookahead)) ADVANCE(17);
+      if (lookahead != 0 &&
+          lookahead != '~') ADVANCE(21);
       END_STATE();
     case 18:
-      ACCEPT_TOKEN(sym_inline_comment);
-      if (set_contains(sym_identifier_character_set_1, 9, lookahead)) ADVANCE(18);
-      if (lookahead != 0 &&
-          lookahead != 0xb0) ADVANCE(23);
-      END_STATE();
-    case 19:
       ACCEPT_TOKEN(anon_sym_TILDE);
       if (lookahead == '~') ADVANCE(11);
       END_STATE();
-    case 20:
+    case 19:
       ACCEPT_TOKEN(anon_sym_TILDE);
       if (lookahead == '~') ADVANCE(12);
       if (lookahead != 0 &&
           lookahead != '\n' &&
-          lookahead != '\r') ADVANCE(16);
+          lookahead != '\r') ADVANCE(15);
+      END_STATE();
+    case 20:
+      ACCEPT_TOKEN(aux_sym_multiline_comment_token1);
+      if (('\t' <= lookahead && lookahead <= '\r') ||
+          lookahead == ' ') ADVANCE(20);
+      if (('a' <= lookahead && lookahead <= 'z')) ADVANCE(17);
+      if (lookahead != 0 &&
+          lookahead != '~') ADVANCE(21);
       END_STATE();
     case 21:
-      ACCEPT_TOKEN(anon_sym_TILDE);
-      if (lookahead == '~') ADVANCE(13);
-      if (lookahead != 0 &&
-          lookahead != 0xb0) ADVANCE(23);
-      END_STATE();
-    case 22:
-      ACCEPT_TOKEN(aux_sym_multiline_comment_token1);
-      if (lookahead == '~') ADVANCE(21);
-      if (('\t' <= lookahead && lookahead <= '\r') ||
-          lookahead == ' ') ADVANCE(22);
-      if (('a' <= lookahead && lookahead <= 'z')) ADVANCE(18);
-      if (lookahead != 0 &&
-          lookahead != 0xb0) ADVANCE(23);
-      END_STATE();
-    case 23:
       ACCEPT_TOKEN(aux_sym_multiline_comment_token1);
       if (lookahead != 0 &&
-          lookahead != 0xb0) ADVANCE(23);
+          lookahead != '~') ADVANCE(21);
       END_STATE();
     default:
       return false;
@@ -403,7 +390,7 @@ static const TSLexMode ts_lex_modes[STATE_COUNT] = {
   [15] = {.lex_state = 0},
   [16] = {.lex_state = 0},
   [17] = {.lex_state = 0},
-  [18] = {.lex_state = 14},
+  [18] = {.lex_state = 13},
   [19] = {.lex_state = 0},
   [20] = {.lex_state = 2},
   [21] = {.lex_state = 0},

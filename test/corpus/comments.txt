@@ -1,0 +1,50 @@
+==============
+Line comments
+==============
+
+Print;
+~~ Hello
+~~Hi
+
+---
+
+(source_file
+  (statement
+    (identifier))
+  (line_comment)
+  (line_comment))
+
+===============
+Inline comments
+===============
+
+Print line 1;
+
+---
+
+(source_file
+  (statement
+    (identifier)
+    (inline_comment)
+    (number)))
+
+==================
+Multiline comments
+==================
+
+Print;
+~a
+~
+
+Print ~ abc
+~
+
+---
+
+(source_file
+  (statement
+    (identifier))
+  (multiline_comment)
+  (statement
+    (identifier))
+  (multiline_comment))
