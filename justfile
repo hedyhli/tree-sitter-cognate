@@ -3,6 +3,7 @@ set shell := ["bash", "-c"]
 build:
   tree-sitter gen
   tree-sitter build
+  make
 
 # Link queries and parser for neovim
 inspect-setup:

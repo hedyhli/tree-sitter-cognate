@@ -130,6 +130,23 @@
     "inline_comment": {
       "type": "PATTERN",
       "value": "[a-z][A-Za-z0-9-?!'+/*>=<^]*"
+    },
+    "multiline_comment": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "~"
+        },
+        {
+          "type": "PATTERN",
+          "value": "[^°]+"
+        },
+        {
+          "type": "STRING",
+          "value": "~"
+        }
+      ]
     }
   },
   "extras": [
@@ -140,6 +157,10 @@
     {
       "type": "SYMBOL",
       "name": "inline_comment"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "multiline_comment"
     },
     {
       "type": "PATTERN",

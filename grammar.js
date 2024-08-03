@@ -4,6 +4,7 @@ module.exports = grammar({
   extras: $ => [
     $.line_comment,
     $.inline_comment,
+    $.multiline_comment,
     /\s/,  // FIXME: How whitespace-sensitive is Cognate?
   ],
 
@@ -25,9 +26,9 @@ module.exports = grammar({
     _literal: $ => choice($.number, $.string),
 
     /* Others things */
-    // operator: $ => choice('+', '-', '*', '/', '>=', '<=', '<', '>', '==', '!='),
     line_comment: $ => seq('~~', /[^\r\n]*/),
     // TODO: Join multiple inline comment words together (adding a repeat1() here panics)
     inline_comment: $ => /[a-z][A-Za-z0-9-?!'+/*>=<^]*/,
+    multiline_comment: $ => seq('~', /[^°]+/, '~'),
   }
 });

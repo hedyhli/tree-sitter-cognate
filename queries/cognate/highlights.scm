@@ -1,8 +1,9 @@
-; (operator) @operator
 (number) @number
+(string) @string
+
 (inline_comment) @comment
 (line_comment) @comment
-; (expression (identifier) @variable)
+(multiline_comment) @comment
 
 [
  ";"
@@ -10,11 +11,6 @@
  ")"
 ] @punctuation.special
 
-; (fn_stmt (identifier) @function)
+((identifier) @keyword (#any-of? @keyword "For" "Let" "Def" "When" "If" "Case" "When" "Do"))
+((identifier) @operator (#any-of? @operator "+" "-" "*" "/" ">" "<" "<=" ">="))
 
-((identifier) @keyword (#any-of? @keyword "For" "Let" "Def" "When" "If" "Case" "When"))
-
-; (def_stmt "Def" @keyword)
-; (def_stmt name: _ @function)
-
-(string) @string

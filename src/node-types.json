@@ -20,6 +20,11 @@
     "fields": {}
   },
   {
+    "type": "multiline_comment",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "source_file",
     "named": true,
     "fields": {},
@@ -88,6 +93,10 @@
   {
     "type": "string",
     "named": true
+  },
+  {
+    "type": "~",
+    "named": false
   },
   {
     "type": "~~",
