@@ -44,3 +44,16 @@ query files into the correct runtime directories.
 
 Consider using the official vim plugin for vim's regex-based syntax
 highlighting: <https://github.com/cognate-lang/cognate-vim>.
+
+## TODO
+
+- Support symbols.
+- Support block comments.
+- Don't enforce "function" statements -- there's no such thing.
+  - Figure out whether to remove "functions" entirely, or treat all identifiers
+    as functions.
+
+## References
+
+- <https://github.com/cognate-lang/cognate-vscode/blob/master/syntaxes/cognate.tmLanguage.json>
+- <https://github.com/cognate-lang/cognate-vim/blob/master/syntax/cognate.vim>
