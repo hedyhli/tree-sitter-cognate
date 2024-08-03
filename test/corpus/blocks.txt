@@ -16,3 +16,44 @@ Print Do (+ 1 2);
         (number)
         (number)))))
 
+==============
+Nested blocks
+==============
+
+Print Do (+ 1 Do (2));
+
+---
+
+(source_file
+  (statement
+    (identifier)
+    (identifier)
+    (block
+      (statement
+        (identifier)
+        (number)
+        (identifier)
+        (block
+          (statement
+            (number)))))))
+
+=============================
+Blocks w/ mutliple statements
+=============================
+
+Print Do (1; 2; *);
+
+---
+
+(source_file
+  (statement
+    (identifier)
+    (identifier)
+    (block
+      (statement
+        (number))
+      (statement
+        (number))
+      (statement
+        (identifier)))))
+
