@@ -2,18 +2,14 @@
 
 <img src="https://raw.githubusercontent.com/hedyhli/tree-sitter-cognate/main/screenshot.png" width=300/>
 
-The vim plugin is great but for a wider reach of editor support a tree-sitter
-grammar is needed. Working on this instead also lets me procrastinate on my
-other WIP project, [an online cognate
+The official vim plugin is great, but for a wider reach of editor support a
+tree-sitter grammar is needed.
+
+This project also came from the need of a parser with JavaScript bindings for
+another WIP project, [an online cognate
 playground](https://github.com/hedyhli/cognate-playground), for which I've
 decided to not simply use a server and a sandbox and wrap around the official
 cognate CLI (and instead make everything purely frontend).
-
-My cognate knowledge is extremely, extremely limited partly due to the
-unfinished status of the official tutorial, and partly due to my being an
-exceptionally slow reader of C source code. I was quite intrugued by ideas in
-this language and since no one else seems to be working on these (tree-sitter
-and online playground)... Here we are.
 
 ## Editor support
 
