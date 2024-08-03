@@ -14,8 +14,16 @@
           "value": "("
         },
         {
-          "type": "SYMBOL",
-          "name": "_many_statements"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_many_statements"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "STRING",
@@ -99,7 +107,7 @@
     },
     "string": {
       "type": "PATTERN",
-      "value": "\".+\""
+      "value": "\"[^\"]*\""
     },
     "_literal": {
       "type": "CHOICE",

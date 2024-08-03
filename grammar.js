@@ -12,7 +12,7 @@ module.exports = grammar({
 
   rules: {
     source_file: $ => $._many_statements,
-    block: $ => seq('(', $._many_statements, ')'),
+    block: $ => seq('(', optional($._many_statements), ')'),
 
     /* Statements */
     statement: $ => seq($._statement, ';'),
@@ -22,7 +22,7 @@ module.exports = grammar({
     /* Atoms */
     identifier: $ => /[A-Z-?!'+/*>=<^][a-zA-Z0-9-?!'+/*>=<^]*/,
     number: $ => /\d+/,
-    string: $ => /".+"/,
+    string: $ => /"[^"]*"/,
     _literal: $ => choice($.number, $.string),
 
     /* Others things */

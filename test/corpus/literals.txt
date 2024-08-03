@@ -1,0 +1,26 @@
+========
+Numbers
+========
+
+1 20
+
+---
+
+(source_file
+  (statement
+    (number)
+    (number)))
+
+========
+Strings
+========
+
+"" "abc"
+
+---
+
+(source_file
+  (statement
+    (string)
+    (string)))
+
