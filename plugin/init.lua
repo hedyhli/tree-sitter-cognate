@@ -1,10 +1,5 @@
 vim.filetype.add({ extension = { cognate = "cognate", cog = "cognate" } })
 
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "cognate",
-  callback = function(event) vim.bo[event.buf].commentstring = "~~ %s" end,
-})
-
 require("nvim-treesitter.parsers").get_parser_configs().cognate = {
   install_info = {
     url = "https://github.com/hedyhli/tree-sitter-cognate",
@@ -13,3 +8,23 @@ require("nvim-treesitter.parsers").get_parser_configs().cognate = {
   },
   filetype = "cognate",
 }
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "cognate",
+  callback = function(event) vim.bo[event.buf].commentstring = "~~ %s" end,
+})
+
+local mod, ok
+-- Comment.nvim
+mod, ok = pcall(require, "Comment.ft")
+if ok then
+  mod.set("cognate", {"~~ %s", "~%s~"})
+end
+-- kommentary
+mod, ok = pcall(require, "kommentary.config")
+if ok then
+  mod.configure_language("cognate", {
+      single_line_comment_string = "~~",
+      multi_line_comment_strings = {"~", "~"},
+  })
+end
