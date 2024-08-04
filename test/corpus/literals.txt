@@ -2,12 +2,14 @@
 Numbers
 ========
 
-1 20
+1 20 0.3 12.345
 
 ---
 
 (source_file
   (statement
+    (number)
+    (number)
     (number)
     (number)))
 
@@ -23,4 +25,18 @@ Strings
   (statement
     (string)
     (string)))
+
+========
+Strings
+========
+
+Print \abc \a-b
+
+---
+
+(source_file
+  (statement
+    (identifier)
+    (symbol)
+    (symbol)))
 

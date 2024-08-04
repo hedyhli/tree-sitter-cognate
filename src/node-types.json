@@ -62,6 +62,10 @@
         {
           "type": "string",
           "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
         }
       ]
     }
@@ -92,6 +96,10 @@
   },
   {
     "type": "string",
+    "named": true
+  },
+  {
+    "type": "symbol",
     "named": true
   },
   {

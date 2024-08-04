@@ -12,20 +12,23 @@ module.exports = grammar({
 
   rules: {
     source_file: $ => $._many_statements,
-    block: $ => seq('(', optional($._many_statements), ')'),
 
     /* Statements */
-    statement: $ => seq($._statement, ';'),
     _statement: $ => repeat1(choice($.identifier, $._literal, $.block)),
+    statement: $ => seq($._statement, ';'),
     _many_statements: $ => seq(repeat($.statement), alias($._statement, $.statement), optional(';')),
+
+    block: $ => seq('(', optional($._many_statements), ')'),
 
     /* Atoms */
     identifier: $ => /[A-Z-?!'+/*>=<^][a-zA-Z0-9-?!'+/*>=<^]*/,
-    number: $ => /\d+/,
-    string: $ => /"[^"]*"/,
-    _literal: $ => choice($.number, $.string),
 
-    /* Others things */
+    number: $ => token(choice(/\d+/, seq(/\d+/, '.', /\d+/))),
+    string: $ => /"[^"]*"/,
+    symbol: $ => /\\[a-zA-Z0-9-?!'+/*>=<^]+/,
+    _literal: $ => choice($.number, $.string, $.symbol),
+
+    /* Others */
     line_comment: $ => seq('~~', /[^\r\n]*/),
     // TODO: Join multiple inline comment words together (adding a repeat1() here panics)
     inline_comment: $ => /[a-z][A-Za-z0-9-?!'+/*>=<^]*/,

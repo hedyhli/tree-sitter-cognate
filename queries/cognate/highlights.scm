@@ -1,5 +1,6 @@
 (number) @number
 (string) @string
+(symbol) @constant
 
 (inline_comment) @comment
 (line_comment) @comment
