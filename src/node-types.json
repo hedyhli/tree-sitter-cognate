@@ -15,6 +15,11 @@
     }
   },
   {
+    "type": "boolean",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "line_comment",
     "named": true,
     "fields": {}
@@ -52,6 +57,10 @@
           "named": true
         },
         {
+          "type": "boolean",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -80,6 +89,14 @@
   },
   {
     "type": ";",
+    "named": false
+  },
+  {
+    "type": "False",
+    "named": false
+  },
+  {
+    "type": "True",
     "named": false
   },
   {

@@ -26,7 +26,8 @@ module.exports = grammar({
     number: $ => token(choice(/\d+/, seq(/\d+/, '.', /\d+/))),
     string: $ => /"[^"]*"/,
     symbol: $ => /\\[a-zA-Z0-9-?!'+/*>=<^]+/,
-    _literal: $ => choice($.number, $.string, $.symbol),
+    boolean: $ => choice('True', 'False'),
+    _literal: $ => choice($.number, $.string, $.symbol, $.boolean),
 
     /* Others */
     line_comment: $ => seq('~~', /[^\r\n]*/),

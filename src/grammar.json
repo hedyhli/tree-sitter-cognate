@@ -138,6 +138,19 @@
       "type": "PATTERN",
       "value": "\\\\[a-zA-Z0-9-?!'+/*>=<^]+"
     },
+    "boolean": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "True"
+        },
+        {
+          "type": "STRING",
+          "value": "False"
+        }
+      ]
+    },
     "_literal": {
       "type": "CHOICE",
       "members": [
@@ -152,6 +165,10 @@
         {
           "type": "SYMBOL",
           "name": "symbol"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "boolean"
         }
       ]
     },
