@@ -190,28 +190,11 @@
       "value": "[a-z][A-Za-z0-9-?!'+/*>=<^]*"
     },
     "multiline_comment": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "~"
-        },
-        {
-          "type": "PATTERN",
-          "value": "[^~]+"
-        },
-        {
-          "type": "STRING",
-          "value": "~"
-        }
-      ]
+      "type": "PATTERN",
+      "value": "~[^~]+~"
     }
   },
   "extras": [
-    {
-      "type": "SYMBOL",
-      "name": "line_comment"
-    },
     {
       "type": "SYMBOL",
       "name": "inline_comment"
@@ -219,6 +202,10 @@
     {
       "type": "SYMBOL",
       "name": "multiline_comment"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "line_comment"
     },
     {
       "type": "PATTERN",

@@ -39,6 +39,12 @@ Print;
 Print ~ abc
 ~
 
+~
+comment
+~~ with line comment in between
+1 ~~ and another
+~
+
 ---
 
 (source_file
@@ -47,4 +53,29 @@ Print ~ abc
   (multiline_comment)
   (statement
     (identifier))
+  (multiline_comment)
+  (multiline_comment)
+  (multiline_comment)
   (multiline_comment))
+
+==============
+Error comments
+==============
+
+Print;
+~~ hi ~ A
+B
+C
+~
+
+---
+
+(source_file
+  (statement
+    (identifier))
+  (line_comment)
+  (statement
+    (identifier)
+    (identifier))
+  (ERROR
+    (UNEXPECTED '\0')))
