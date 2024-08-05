@@ -16,9 +16,24 @@ cognate CLI (and instead make everything purely frontend).
 ### Nvim
 
 Ensure `nvim-treesitter` is installed, then install this repo as a plugin using
-your favorite plugin manager (`hedyhli/tree-sitter-cognate`); Parsers and
-queries will be automatically set up. Finally either put `cognate` into your
-`ensure_installed`, or run `:TSInstall cognate`.
+your favorite plugin manager (`hedyhli/tree-sitter-cognate`);
+
+Lazy.nvim example:
+
+```lua
+{
+  "hedyhli/tree-sitter-cognate",
+  dependencies = { "nvim-treesitter/nvim-treesitter" },
+  enabled = vim.fn.has('nvim-0.9') == 1,
+},
+```
+
+If you use `Comment.nvim` or `kommentary`, they will automatically be set up to
+be usable for commenting for both line and blocks in Cognate in addition to
+`commentstring`.
+
+Parsers and queries will be automatically set up. Finally either put `cognate`
+into your `ensure_installed`, or run `:TSInstall cognate`.
 
 ### Emacs
 
