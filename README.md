@@ -1,6 +1,6 @@
 # tree-sitter-cognate
 
-<img src="https://raw.githubusercontent.com/hedyhli/tree-sitter-cognate/main/screenshot.png" width=300/>
+<img src="https://raw.githubusercontent.com/hedyhli/tree-sitter-cognate/main/screenshot.png" width=500/>
 
 The official vim plugin is great, but for a wider reach of editor support a
 tree-sitter grammar is needed.
