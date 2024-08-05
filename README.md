@@ -5,13 +5,7 @@
 The official vim plugin is great, but for a wider reach of editor support a
 tree-sitter grammar is needed.
 
-This project also came from the need of a parser with JavaScript bindings for
-another WIP project, [an online cognate
-playground](https://github.com/hedyhli/cognate-playground), for which I've
-decided to not simply use a server and a sandbox and wrap around the official
-cognate CLI (and instead make everything purely frontend).
-
-## Editor support
+## Editor setup
 
 ### Nvim
 
