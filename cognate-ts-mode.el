@@ -1,4 +1,4 @@
-;;; cognate-mode.el --- tree-sitter support for the Cognate programming language                     -*- lexical-binding: t; -*-
+;;; cognate-ts-mode.el --- tree-sitter support for the Cognate programming language                     -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2024 hedy
 
@@ -137,12 +137,8 @@
   "Tree-sitter font-lock settings for `cognate-ts-mode'.")
 
 ;;;###autoload
-(define-derived-mode cognate-ts-mode prog-mode "cognate[ts]"
-  "Generic mode to edit Cognate files.
-
-This is a generic major mode intended to be inherited by a
-concrete implementation.  Currently there are two concrete
-implementations: `css-mode' and `css-ts-mode'."
+(define-derived-mode cognate-ts-mode prog-mode "Cognate[ts]"
+  "Major mode to edit Cognate files that uses Tree-Sitter."
   :group 'cognate
   :syntax-table cognate-ts-mode--syntax-table
   (setq-local comment-start "~~")
