@@ -1,19 +1,86 @@
-Print \A \b \c 1.2 2 4 True False \;
+~~ Primitives
+Print \A \b \c 1.2 3 4 True False \; ~~ Errors
 
-Print <= 1 2;
+~~ Keywords and operators
+If <= > != == / * + - 1 2;
+Let While Unless Until;
 
-~~ 1 2;
+~~ NOTE: Line comment
+~~ TODO: Another line comment
 
+~Multi
+line
+comment
+~
+
+~~ Lone block
 (
     1
     2
     3
 );
 
+~~ Function with empty block
 Def A ();
-A 1 2 3;
 
+~~ Local definition reference and types
+A 1 2 3 Number List Box;
+
+~~ Nested blocks
 (
-    Def B ();
+    ~~ Long function for testing treesitter-context
+    Def B (
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+        Print;
+    );
+    ~~ Another definition reference
     B 1 2 3;
+    ~~ Move between functions
+    Def C (
+        1
+        2
+        3
+        4
+        5
+    );
 );

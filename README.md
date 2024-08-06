@@ -10,6 +10,24 @@ a more unified approach to supporting indents and code-folding rules.
 
 ### Nvim
 
+Note that the built-in tree-sitter support requires Nvim 0.9+.
+
+- [X] Highlights
+- [X] Toggle line comments
+- [X] Toggle block comments (for `Comment.nvim` and `kommentary`)
+- [X] Injection language for comments
+- [X] Indents
+- [X] Folds
+- [X] Locals
+- [X] [Text objects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
+  - [X] Function
+  - [X] Block
+  - [X] Assignment
+  - [X] Statement
+  - [X] Comment
+  - [X] Number
+- [X] [Context](https://github.com/nvim-treesitter/nvim-treesitter-context)
+
 Ensure `nvim-treesitter` is installed, then install this repo as a plugin using
 your favorite plugin manager (`hedyhli/tree-sitter-cognate`);
 
@@ -32,9 +50,16 @@ into your `ensure_installed`, or run `:TSInstall cognate`.
 
 ### Emacs
 
+- [X] Highlights
+- [X] Toggle line comments
+- [ ] Toggle block comments
+- [X] Indents
+- [ ] Imenu
+
 A library for `cognate-ts-mode` is included in this repository, it supports the
 built-in tree-sitter feature for Emacs 29 and above. The major mode supports
-indent rules based on tree-sitter in addition to highlighting.
+a few other features using tree-sitter in addition to highlighting, as listed
+above.
 
 For other versions, consider using the official cognate-mode package for emacs
 (which uses regex-based syntax highlighting), or consult the documentation on
@@ -69,10 +94,29 @@ up to automatically use `cognate-ts-mode`.
 
 ### Helix
 
-Setup new grammar for cognate files by pointing to this repo, then copy the
-query files into the correct runtime directories.
+- [X] Highlights
+- [X] Toggle line comments
+- [X] Toggle block comments
+- [X] Injection language for comments
+- [X] Indents
+- [X] Text objects
+  - [X] Functions
+  - [X] Comments
+  - [ ] Blocks (note that you can simply use `mi)` to select parenthesis)
 
-<https://docs.helix-editor.com/guides/adding_languages.html>
+Add a new language by appending the contents of `helix/language.toml` in this
+repository.
+
+Next, download and install the grammar:
+```
+hx -g fetch
+hx -g build
+```
+
+Then copy (or link) queries files from `helix/` into the correct
+runtime directory. For instance, `helix/queries/cognate` (of this repo) to
+`~/.config/helix/runtime/queries/cognate`. Note that Helix should use queries
+under the **`helix/`** directory in this repository.
 
 ### Vim
 
