@@ -3,7 +3,8 @@
 <img src="https://raw.githubusercontent.com/hedyhli/tree-sitter-cognate/main/screenshot.png" width=500/>
 
 The official regex-based highlighting plugins are great, but for a wider
-reach of editor support a tree-sitter grammar is needed.
+reach of editor support a tree-sitter grammar is needed which gives way to
+a more unified approach to supporting indents and code-folding rules.
 
 ## Editor setup
 
@@ -31,11 +32,13 @@ into your `ensure_installed`, or run `:TSInstall cognate`.
 
 ### Emacs
 
-A library for `cognate-ts-mode` comes with this repository, it supports the
-built-in tree-sitter feature for Emacs 29 and above. For other versions,
-consider using the official cognate-mode package for emacs, or consult the
-documentation on how to add a new grammar for the tree-sitter package you
-are using.
+A library for `cognate-ts-mode` is included in this repository, it supports the
+built-in tree-sitter feature for Emacs 29 and above. The major mode supports
+indent rules based on tree-sitter in addition to highlighting.
+
+For other versions, consider using the official cognate-mode package for emacs
+(which uses regex-based syntax highlighting), or consult the documentation on
+how to add a new grammar for the tree-sitter package you are using.
 
 Details on how to set up tree-sitter-cognate for Emacs 29+ is as follows.
 
