@@ -1,7 +1,19 @@
-Print \A \b \c 1.2 2 4 True False \;
+Print \A \b \c 1.2 2 4 True False ;
 
 Print <= 1 2;
 
 ~~ 1 2;
 
+(
+    1
+    2
+    3
+);
+
 Def A ();
+A 1 2 3;
+
+(
+    Def B ();
+    B 1 2 3;
+);
