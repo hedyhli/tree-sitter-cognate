@@ -30,48 +30,19 @@ A 1 2 3 Number List Box;
 (
     ~~ Long function for testing treesitter-context
     Def B (
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
-        Print;
+        Print 0;
+        Print 0;
+        Print 0;
+        Def B2 (
+            Print 0;
+            Print 0;
+            Print 0;
+        );
+        Def B3 (
+            Print 0;
+            Print 0;
+            Print 0;
+        );
     );
     ~~ Another definition reference
     B 1 2 3;
