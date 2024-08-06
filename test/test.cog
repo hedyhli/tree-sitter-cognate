@@ -1,2 +1,7 @@
-Print \A \b \c 1.2 2 4 True False \; ~a
-~
+Print \A \b \c 1.2 2 4 True False \;
+
+Print <= 1 2;
+
+~~ 1 2;
+
+Def A ();

@@ -1,0 +1,169 @@
+;;; cognate-mode.el --- tree-sitter support for the Cognate programming language                     -*- lexical-binding: t; -*-
+
+;; Copyright (C) 2024 hedy
+
+;; Author: hedy
+;; Keywords: cognate highlighting
+;; Version: 0.1.0
+
+;;; Commentary:
+
+;;; Code:
+
+(require 'treesit)
+(eval-when-compile (require 'rx))
+
+(declare-function treesit-parser-create "treesit.c")
+(declare-function treesit-induce-sparse-tree "treesit.c")
+(declare-function treesit-node-child "treesit.c")
+(declare-function treesit-node-child-by-field-name "treesit.c")
+(declare-function treesit-node-start "treesit.c")
+(declare-function treesit-node-end "treesit.c")
+(declare-function treesit-node-type "treesit.c")
+(declare-function treesit-node-parent "treesit.c")
+(declare-function treesit-query-compile "treesit.c")
+
+(defvar cognate-ts-mode--syntax-table
+  (let ((st (make-syntax-table)))
+    (modify-syntax-entry ?\; "w" st)
+    (modify-syntax-entry ?' "w" st)
+    (modify-syntax-entry ?- "w" st)
+    (modify-syntax-entry ?! "w" st)
+    (modify-syntax-entry ?? "w" st)
+    (modify-syntax-entry ?~ "! 12" st)
+    (modify-syntax-entry ?\n ">" st)
+    (modify-syntax-entry ?\" "\"" st)
+    (modify-syntax-entry ?\( "()" st)
+    (modify-syntax-entry ?\) ")(" st)
+    (modify-syntax-entry ?\\ "'" st)
+    st)
+  "Syntax table for `cognate-ts-mode'")
+
+(defvar cognate-ts-mode--keywords
+  '("For" "While" "Let" "Def" "When" "If"
+    "Case" "When" "Unless" "Do" "With"
+    "Set" "Take-while" "Until")
+  "Cognate builtin keywords for font-locking.")
+
+(defvar cognate-ts-mode--operators
+  '("+" "-" "*" "/" ">" "<" "<=" ">="
+    "==" "!=" "Modulo" "Exp" "Not" "And"
+    "Or" "Xor")
+  "Cognate operators for font-locking.")
+
+(defvar cognate-ts-mode--builtins
+  '("Print" "Prints" "Puts" "Put" "Fold" "Show"
+    "Reverse" "Twin" "Drop" "Swap" "Case" "When"
+    "Do" "Map" "Range" "Read-file" "Unbox" "Floor"
+    "Ceiling" "Round" "Ln" "Log" "Triplet" "Head"
+    "Tail" "First" "Rest" "Sin" "Cos" "Tan" "Asin"
+    "Acos" "Atan" "Sind" "Cosd" "Tand" "Asind"
+    "Acosd" "Atand" "Sinh" "Cosh" "Tanh" "Sinhd"
+    "Coshd" "Tanhd" "Filter" "Number?" "Zero?"
+    "Empty?" "Empty" "Any?" "None" "All" "Sort"
+    "Append" "Prepend" "Min" "Max" "Times"
+    "Integer!" "Number!" "Boolean!" "Block!"
+    "Zero!" "String!" "List!")
+  "Cognate built-in functions for font-locking.")
+
+(defvar cognate-ts-mode--types
+  '("List" "Box" "Regex" "Character" "Number"))
+
+(defvar cognate--treesit-settings
+  (treesit-font-lock-rules
+   :feature 'comment
+   :language 'cognate
+   '((line_comment) @font-lock-comment-face
+     (inline_comment) @font-lock-comment-face
+     (multiline_comment) @font-lock-comment-face)
+
+   :feature 'string
+   :language 'cognate
+   '((string) @font-lock-string-face)
+
+   :feature 'keyword
+   :language 'cognate
+   `((statement
+      ((identifier) @font-lock-keyword-face
+       (:match ,(rx-to-string
+                 `(seq bol
+                       (or ,@cognate-ts-mode--keywords)
+                       eol))
+               @font-lock-keyword-face))))
+
+   :feature 'operator
+   :language 'cognate
+   `((statement
+      ((identifier) @font-lock-operator-face
+       (:match ,(rx-to-string
+                 `(seq bol
+                       (or ,@cognate-ts-mode--operators)
+                       eol))
+               @font-lock-operator-face))))
+
+   :feature 'delimiter
+   :language 'cognate
+   '([";"] @font-lock-delimiter-face)
+
+   :feature 'builtin
+   :language 'cognate
+   `((statement
+      ((identifier) @font-lock-type-face
+       (:match ,(rx-to-string
+                 `(seq bol
+                       (or ,@cognate-ts-mode--types)
+                       eol))
+               @font-lock-type-face))))
+   `((statement
+      ((identifier) @font-lock-builtin-face
+       (:match ,(rx-to-string
+                 `(seq bol
+                       (or ,@cognate-ts-mode--builtins)
+                       eol))
+               @font-lock-builtin-face))))
+
+   :feature 'constant
+   :language 'cognate
+   '((number) @font-lock-number-face
+     (symbol) @font-lock-constant-face)
+    
+   :feature 'bracket
+   :language 'cognate
+   '((["(" ")"]) @font-lock-bracket-face)
+
+   :feature 'error
+   :language 'cognate
+   '((ERROR) @error))
+  "Tree-sitter font-lock settings for `cognate-ts-mode'.")
+
+;;;###autoload
+(define-derived-mode cognate-ts-mode prog-mode "cognate[ts]"
+  "Generic mode to edit Cognate files.
+
+This is a generic major mode intended to be inherited by a
+concrete implementation.  Currently there are two concrete
+implementations: `css-mode' and `css-ts-mode'."
+  :group 'cognate
+  :syntax-table cognate-ts-mode--syntax-table
+  (setq-local comment-start "~~")
+  (setq-local comment-start-skip "~~[ \t]*")
+  (setq-local comment-end "")
+  (setq-local comment-end-skip "[ \t]*")
+
+  (when (treesit-ready-p 'cognate)
+    (treesit-parser-create 'cognate)
+
+    (setq-local treesit-font-lock-settings cognate--treesit-settings)
+    (setq-local treesit-font-lock-feature-list
+                '((comment builtin keyword)
+                  (constant string)
+                  (error operator bracket delimiter)))
+
+    (treesit-major-mode-setup)))
+
+(if (treesit-ready-p 'cognate)
+    (add-to-list 'auto-mode-alist '("\\.cog\\'" . cognate-ts-mode)))
+
+(provide 'cognate-ts-mode)
+
+;;; cognate-ts-mode.el ends here

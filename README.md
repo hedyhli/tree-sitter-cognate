@@ -2,8 +2,8 @@
 
 <img src="https://raw.githubusercontent.com/hedyhli/tree-sitter-cognate/main/screenshot.png" width=500/>
 
-The official vim plugin is great, but for a wider reach of editor support a
-tree-sitter grammar is needed.
+The official regex-based highlighting plugins are great, but for a wider
+reach of editor support a tree-sitter grammar is needed.
 
 ## Editor setup
 
@@ -31,12 +31,38 @@ into your `ensure_installed`, or run `:TSInstall cognate`.
 
 ### Emacs
 
-Ensure your version of emacs either has tree-sitter built-in or you have the
-package installed.
+A library for `cognate-ts-mode` comes with this repository, it supports the
+built-in tree-sitter feature for Emacs 29 and above. For other versions,
+consider using the official cognate-mode package for emacs, or consult the
+documentation on how to add a new grammar for the tree-sitter package you
+are using.
 
-You then have to build it yourself and put the resulting library in the correct
-place depending on your setup (this might be, for instance
-`~/path-to-emacs-config/tree-sitter/libtree-sitter-cognate.dylib`.
+Details on how to set up tree-sitter-cognate for Emacs 29+ is as follows.
+
+### Step 1
+
+Install the grammar using `M-x treesit-install-language-grammar`, enter
+`cognate`, the URL `https://github.com/hedyhli/tree-sitter-cognate`, and
+accept default options.
+
+### Step 2
+
+Install this repository as a package using your package manager.
+
+Elpaca example:
+
+```elisp
+(use-package cognate-ts-mode
+  :ensure (:host "github" :repo "hedyhli/tree-sitter-cognate"))
+```
+
+Note that this package is not currently published on ELPA/MELPA.
+
+### Step 3
+
+A restart of emacs might be required after installation. Finally, test
+the syntax highlighting on a Cognate file. All `*.cog` files are set
+up to automatically use `cognate-ts-mode`.
 
 ### Helix
 
