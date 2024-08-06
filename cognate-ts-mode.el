@@ -39,6 +39,20 @@
     st)
   "Syntax table for `cognate-ts-mode'")
 
+(defcustom cognate-ts-mode-indent-offset 4
+  "Number of spaces for each indentation step in `cognate-ts-mode'."
+  :version "29.1"
+  :type 'integer
+  :safe 'integerp
+  :group 'json)
+
+(defvar cognate--treesit-indent-rules
+  '((cognate
+     ((node-is ")") parent-bol 0)
+     ((parent-is "block") parent-bol cognate-ts-mode-indent-offset)
+     ))
+  "Tree-sitter indentation rules for `cognate-ts-mode'.")
+
 (defvar cognate-ts-mode--keywords
   '("For" "While" "Let" "Def" "When" "If"
     "Case" "When" "Unless" "Do" "With"
@@ -113,8 +127,8 @@
                  `(seq bol
                        (or ,@cognate-ts-mode--types)
                        eol))
-               @font-lock-type-face))))
-   `((statement
+               @font-lock-type-face)))
+    (statement
       ((identifier) @font-lock-builtin-face
        (:match ,(rx-to-string
                  `(seq bol
@@ -149,11 +163,19 @@
   (when (treesit-ready-p 'cognate)
     (treesit-parser-create 'cognate)
 
+    ;; Indent
+    (setq-local treesit-simple-indent-rules cognate--treesit-indent-rules)
+
+    ;; Highlight
     (setq-local treesit-font-lock-settings cognate--treesit-settings)
     (setq-local treesit-font-lock-feature-list
                 '((comment builtin keyword)
                   (constant string)
                   (error operator bracket delimiter)))
+
+    ;; Electric
+    ;;(setq-local electric-indent-chars
+    ;;            (append "()" electric-indent-chars))
 
     (treesit-major-mode-setup)))
 
