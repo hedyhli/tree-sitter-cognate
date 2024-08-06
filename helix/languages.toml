@@ -1,0 +1,14 @@
+[[language]]
+name = "cognate"
+scope = "source.cog"
+injection-regex = "cognate"
+file-types = ["cog"]
+indent = { tab-width = 4, unit = "\t" }
+# NOTE: For an older helix version, use 'comment-token' instead.
+comment-tokens = "~~"
+# NOTE: Not supported in an older helix version:
+block-comment-tokens = { start = "~", end = "~" }
+
+[[grammar]]
+name = "cognate"
+source = { git = "https://github.com/hedyhli/tree-sitter-cognate", rev = "main" }
