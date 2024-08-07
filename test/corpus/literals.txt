@@ -39,6 +39,41 @@ Strings
     (string)
     (string)))
 
+==============
+String escapes
+==============
+
+"\""
+"\n"
+"\\"
+"\"\n\r\t Hello";
+" \" Inc; \" " " " Inc;
+"\} \'"
+
+---
+
+(source_file
+  (statement
+    (string
+      (escape_sequence))
+    (string
+      (escape_sequence))
+    (string
+      (escape_sequence))
+    (string
+      (escape_sequence)
+      (escape_sequence)
+      (escape_sequence)
+      (escape_sequence)))
+  (statement
+    (string
+      (escape_sequence)
+      (escape_sequence))
+    (string)
+    (identifier))
+  (statement
+    (string)))
+
 ========
 Symbols
 ========

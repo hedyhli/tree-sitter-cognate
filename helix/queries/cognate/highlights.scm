@@ -1,5 +1,6 @@
 (number) @constant.numeric
 (string) @string
+(escape_sequence) @constant.character.escape
 (symbol) @string.special.symbol
 (boolean) @constant.builtin.boolean
 

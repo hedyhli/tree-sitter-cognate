@@ -129,7 +129,7 @@ highlighting: <https://github.com/cognate-lang/cognate-vim>.
 - [x] Support block comments.
 - [x] Don't enforce "function" statements -- there's no such thing.
 - [x] Floating point numbers.
-- [ ] String escapes.
+- [x] String escapes.
 
 ## References
 

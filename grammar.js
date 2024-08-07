@@ -24,7 +24,13 @@ module.exports = grammar({
     identifier: $ => /[A-Z-?!'+/*>=<^][a-zA-Z0-9-?!'+/*>=<^]*/,
 
     number: $ => token(choice(/\d+/, seq(/\d+/, '.', /\d+/))),
-    string: $ => /"[^"]*"/,
+    // string: $ => /"(\\.|[^\n"\\])*"/,
+    string: $ => seq(
+      '"',
+      repeat(choice(/(\\[^abtnvfr\\"]|[^\n"\\])+/, $.escape_sequence)),
+      token.immediate('"'),
+    ),
+    escape_sequence: _ => token.immediate(/\\[abtnvfr\\"]/),
     symbol: $ => /\\[a-zA-Z0-9-?!'+/*>=<^]+/,
     boolean: $ => choice('True', 'False'),
     _literal: $ => choice($.number, $.string, $.symbol, $.boolean),

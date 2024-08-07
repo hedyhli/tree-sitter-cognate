@@ -1,5 +1,6 @@
 ~~ Primitives
 Print \A \b \c 1.2 3 4 True False \; ~~ Errors
+Print " \' \" \a \b \c \d \e \f \g \n";
 
 ~~ Keywords and operators
 If <= > != == / * + - 1 2;

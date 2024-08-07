@@ -95,6 +95,10 @@
    :language 'cognate
    '((string) @font-lock-string-face)
 
+   :feature 'escape
+   :langauge 'cognate
+   '((escape_sequence) @font-lock-escape-face)
+
    :feature 'keyword
    :language 'cognate
    `((statement
@@ -170,7 +174,7 @@
     (setq-local treesit-font-lock-settings cognate--treesit-settings)
     (setq-local treesit-font-lock-feature-list
                 '((comment builtin keyword)
-                  (constant string)
+                  (constant string escape)
                   (error operator bracket delimiter)))
 
     ;; Electric
