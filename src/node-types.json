@@ -20,11 +20,6 @@
     "fields": {}
   },
   {
-    "type": "line_comment",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "source_file",
     "named": true,
     "fields": {},
@@ -126,6 +121,10 @@
     "named": true
   },
   {
+    "type": "line_comment",
+    "named": true
+  },
+  {
     "type": "multiline_comment",
     "named": true
   },
@@ -136,9 +135,5 @@
   {
     "type": "symbol",
     "named": true
-  },
-  {
-    "type": "~~",
-    "named": false
   }
 ]

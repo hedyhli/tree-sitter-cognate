@@ -143,8 +143,8 @@
             "type": "CHOICE",
             "members": [
               {
-                "type": "PATTERN",
-                "value": "(\\\\[^abtnvfr\\\\\"]|[^\\n\"\\\\])+"
+                "type": "SYMBOL",
+                "name": "_string_content"
               },
               {
                 "type": "SYMBOL",
@@ -161,6 +161,17 @@
           }
         }
       ]
+    },
+    "_string_content": {
+      "type": "IMMEDIATE_TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 1,
+        "content": {
+          "type": "PATTERN",
+          "value": "(\\\\[^abtnvfr\\\\\"]|[^\\n\"\\\\])+"
+        }
+      }
     },
     "escape_sequence": {
       "type": "IMMEDIATE_TOKEN",
@@ -208,25 +219,47 @@
       ]
     },
     "line_comment": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "~~"
-        },
-        {
-          "type": "PATTERN",
-          "value": "[^\\r\\n]*"
-        }
-      ]
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "~~"
+          },
+          {
+            "type": "PATTERN",
+            "value": "[^\\r\\n]*"
+          }
+        ]
+      }
     },
     "inline_comment": {
       "type": "PATTERN",
       "value": "[a-z][A-Za-z0-9-?!'+/*>=<^]*"
     },
     "multiline_comment": {
-      "type": "PATTERN",
-      "value": "~[^~]+~"
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "~"
+          },
+          {
+            "type": "REPEAT1",
+            "content": {
+              "type": "PATTERN",
+              "value": "[^~]"
+            }
+          },
+          {
+            "type": "STRING",
+            "value": "~"
+          }
+        ]
+      }
     }
   },
   "extras": [

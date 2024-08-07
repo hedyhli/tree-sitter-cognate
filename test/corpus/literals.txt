@@ -30,12 +30,14 @@ True False
 Strings
 ========
 
-"" "abc"
+"" "abc" "~" "~~"
 
 ---
 
 (source_file
   (statement
+    (string)
+    (string)
     (string)
     (string)))
 
