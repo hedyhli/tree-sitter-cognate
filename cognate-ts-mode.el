@@ -96,7 +96,8 @@
    '((string) @font-lock-string-face)
 
    :feature 'escape
-   :langauge 'cognate
+   :language 'cognate
+   :override t
    '((escape_sequence) @font-lock-escape-face)
 
    :feature 'keyword
