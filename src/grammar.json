@@ -104,11 +104,7 @@
         "members": [
           {
             "type": "PATTERN",
-            "value": "-?0"
-          },
-          {
-            "type": "PATTERN",
-            "value": "-?[1-9][0-9]*"
+            "value": "-?[0-9]+"
           },
           {
             "type": "PATTERN",

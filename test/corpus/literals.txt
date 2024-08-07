@@ -2,12 +2,16 @@
 Numbers
 ========
 
-1 20 0.3 12.345 -1 -123 -10.12
+1 20 0.3 12.345 -1 -123 -10.12 01 0012 00.1 001.0
 
 ---
 
 (source_file
   (statement
+    (number)
+    (number)
+    (number)
+    (number)
     (number)
     (number)
     (number)
