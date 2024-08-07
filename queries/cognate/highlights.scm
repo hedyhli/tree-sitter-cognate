@@ -36,7 +36,7 @@
                                  "Empty?" "Empty" "Any?" "None" "All" "Sort"
                                  "Append" "Prepend" "Min" "Max" "Times"
                                  "Integer!" "Number!" "Boolean!" "Block!"
-                                 "Zero!" "String!" "List!"))
+                                 "Zero!" "String!" "List!" "Push"))
 ((identifier) @operator (#any-of? @operator "+" "-" "*" "/" ">" "<" "<=" ">="
                          "==" "!=" "Modulo" "Exp" "Not" "And" "Or" "Xor"))
 ((identifier) @type.builtin (#any-of? @type.builtin "List" "Box" "Regex"
