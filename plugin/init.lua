@@ -1,4 +1,4 @@
-vim.filetype.add({ extension = { cognate = "cognate", cog = "cognate" } })
+-- vim.filetype.add({ extension = { cog = "cognate" } })
 
 require("nvim-treesitter.parsers").get_parser_configs().cognate = {
   install_info = {
