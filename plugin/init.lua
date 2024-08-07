@@ -16,12 +16,12 @@ vim.api.nvim_create_autocmd("FileType", {
 
 local mod, ok
 -- Comment.nvim
-mod, ok = pcall(require, "Comment.ft")
+ok, mod = pcall(require, "Comment.ft")
 if ok then
   mod.set("cognate", {"~~ %s", "~%s~"})
 end
 -- kommentary
-mod, ok = pcall(require, "kommentary.config")
+ok, mod = pcall(require, "kommentary.config")
 if ok then
   mod.configure_language("cognate", {
       single_line_comment_string = "~~",
