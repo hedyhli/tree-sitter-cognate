@@ -130,6 +130,8 @@ highlighting: <https://github.com/cognate-lang/cognate-vim>.
 - [x] Don't enforce "function" statements -- there's no such thing.
 - [x] Floating point numbers.
 - [x] String escapes.
+- [ ] Case insensitivity for indentifiers (booleans in grammar, keywords
+  everywhere else)
 
 ## References
 
