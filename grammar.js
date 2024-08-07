@@ -20,21 +20,28 @@ module.exports = grammar({
 
     block: $ => seq('(', optional($._many_statements), ')'),
 
-    /* Atoms */
-    identifier: $ => /[A-Z-?!'+/*>=<^][a-zA-Z0-9-?!'+/*>=<^]*/,
+    /* Literals */
+    number: $ => token(choice(
+      /-?0/,
+      /-?[1-9][0-9]*/,
+      /-?[0-9]+\.[0-9]+/,
+    )),
 
-    number: $ => token(choice(/\d+/, seq(/\d+/, '.', /\d+/))),
-    // string: $ => /"(\\.|[^\n"\\])*"/,
     string: $ => seq(
       '"',
       repeat(choice($._string_content, $.escape_sequence)),
       token.immediate('"'),
     ),
+
     _string_content: _ => token.immediate(prec(1, /(\\[^abtnvfr\\"]|[^\n"\\])+/)),
     escape_sequence: _ => token.immediate(/\\[abtnvfr\\"]/),
+
     symbol: $ => /\\[a-zA-Z0-9-?!'+/*>=<^]+/,
-    boolean: $ => choice('True', 'False'),
+    boolean: $ => choice(/T[Rr][Uu][Ee]/, /F[Aa][Ll][Ss][Ee]/),
+
     _literal: $ => choice($.number, $.string, $.symbol, $.boolean),
+
+    identifier: $ => /[A-Z-?!'+/*>=<^][a-zA-Z0-9-?!'+/*>=<^]*/,
 
     /* Others */
     line_comment: $ => token(seq('~~', /[^\r\n]*/)),

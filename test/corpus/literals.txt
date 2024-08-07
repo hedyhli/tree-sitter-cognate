@@ -2,12 +2,15 @@
 Numbers
 ========
 
-1 20 0.3 12.345
+1 20 0.3 12.345 -1 -123 -10.12
 
 ---
 
 (source_file
   (statement
+    (number)
+    (number)
+    (number)
     (number)
     (number)
     (number)
@@ -17,13 +20,17 @@ Numbers
 Booleans
 ========
 
-True False
+True False true TRUE fALSE FAlse
 
 ---
 
 (source_file
   (statement
     (boolean)
+    (boolean)
+    (inline_comment)
+    (boolean)
+    (inline_comment)
     (boolean)))
 
 ========

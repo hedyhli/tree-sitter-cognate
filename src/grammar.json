@@ -97,10 +97,6 @@
         }
       ]
     },
-    "identifier": {
-      "type": "PATTERN",
-      "value": "[A-Z-?!'+/*>=<^][a-zA-Z0-9-?!'+/*>=<^]*"
-    },
     "number": {
       "type": "TOKEN",
       "content": {
@@ -108,24 +104,15 @@
         "members": [
           {
             "type": "PATTERN",
-            "value": "\\d+"
+            "value": "-?0"
           },
           {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "PATTERN",
-                "value": "\\d+"
-              },
-              {
-                "type": "STRING",
-                "value": "."
-              },
-              {
-                "type": "PATTERN",
-                "value": "\\d+"
-              }
-            ]
+            "type": "PATTERN",
+            "value": "-?[1-9][0-9]*"
+          },
+          {
+            "type": "PATTERN",
+            "value": "-?[0-9]+\\.[0-9]+"
           }
         ]
       }
@@ -188,12 +175,12 @@
       "type": "CHOICE",
       "members": [
         {
-          "type": "STRING",
-          "value": "True"
+          "type": "PATTERN",
+          "value": "T[Rr][Uu][Ee]"
         },
         {
-          "type": "STRING",
-          "value": "False"
+          "type": "PATTERN",
+          "value": "F[Aa][Ll][Ss][Ee]"
         }
       ]
     },
@@ -217,6 +204,10 @@
           "name": "boolean"
         }
       ]
+    },
+    "identifier": {
+      "type": "PATTERN",
+      "value": "[A-Z-?!'+/*>=<^][a-zA-Z0-9-?!'+/*>=<^]*"
     },
     "line_comment": {
       "type": "TOKEN",
