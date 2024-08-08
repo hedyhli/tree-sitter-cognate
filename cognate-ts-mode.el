@@ -77,7 +77,8 @@
     "Empty?" "Empty" "Any?" "None" "All" "Sort"
     "Append" "Prepend" "Min" "Max" "Times"
     "Integer!" "Number!" "Boolean!" "Block!"
-    "Zero!" "String!" "List!" "Symbol!" "Push")
+    "Zero!" "String!" "List!" "Symbol!" "Push"
+    "Index" "Length")
   "Cognate built-in functions for font-locking.")
 
 (defvar cognate-ts-mode--types

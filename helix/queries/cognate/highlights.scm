@@ -46,7 +46,8 @@
 ;                                  "Empty?" "Empty" "Any?" "None" "All" "Sort"
 ;                                  "Append" "Prepend" "Min" "Max" "Times"
 ;                                  "Integer!" "Number!" "Boolean!" "Block!"
-;                                  "Zero!" "String!" "List!"))
+;                                  "Zero!" "String!" "List!" "Index" "Length"
+;                                  "Push"))
 
 ((identifier) @operator (#match? @operator "^(\\+|-|\\*|/|>|<|<=|>=|==|!=)$"))
 
