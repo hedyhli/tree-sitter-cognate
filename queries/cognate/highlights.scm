@@ -37,7 +37,8 @@
                                  "None" "All" "Sort" "Append" "Prepend" "Min"
                                  "Max" "Times" "Integer!" "Number!" "Boolean!"
                                  "Block!" "Zero!" "String!" "List!" "Symbol!"
-                                 "Push" "Stack" "Take" "Discard" "Error" "Assert"))
+                                 "Push" "Stack" "Take" "Discard" "Error" "Assert"
+                                 "Clear"))
 ((identifier) @operator (#any-of? @operator "+" "-" "*" "/" ">" "<" "<=" ">="
                          "==" "!=" "Modulo" "Exp" "Not" "And" "Or" "Xor"))
 ((identifier) @type.builtin (#any-of? @type.builtin "List" "Box" "Regex"

@@ -44,7 +44,7 @@
 ;                                  "Acosd" "Atand" "Sinh" "Cosh" "Tanh" "Sinhd"
 ;                                  "Coshd" "Tanhd" "Filter" "Number?" "Zero?"
 ;                                  "Empty?" "Empty" "Any?" "None" "All" "Sort"
-;                                  "Append" "Prepend" "Min" "Max" "Times"
+;                                  "Append" "Prepend" "Min" "Max" "Times" "Clear"
 ;                                  "Integer!" "Number!" "Boolean!" "Block!"
 ;                                  "Zero!" "String!" "List!" "Index" "Length"
 ;                                  "Push" "Stack" "Take" "Discard" "Error" "Assert"))

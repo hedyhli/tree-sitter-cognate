@@ -79,7 +79,7 @@
     "Integer!" "Number!" "Boolean!" "Block!"
     "Zero!" "String!" "List!" "Symbol!" "Push"
     "Index" "Length" "Stack" "Take" "Discard" "Error"
-    "Assert")
+    "Assert" "Clear")
   "Cognate built-in functions for font-locking.")
 
 (defvar cognate-ts-mode--types
