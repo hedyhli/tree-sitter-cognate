@@ -78,7 +78,8 @@
     "Append" "Prepend" "Min" "Max" "Times"
     "Integer!" "Number!" "Boolean!" "Block!"
     "Zero!" "String!" "List!" "Symbol!" "Push"
-    "Index" "Length" "Stack")
+    "Index" "Length" "Stack" "Take" "Discard" "Error"
+    "Assert")
   "Cognate built-in functions for font-locking.")
 
 (defvar cognate-ts-mode--types

@@ -47,7 +47,7 @@
 ;                                  "Append" "Prepend" "Min" "Max" "Times"
 ;                                  "Integer!" "Number!" "Boolean!" "Block!"
 ;                                  "Zero!" "String!" "List!" "Index" "Length"
-;                                  "Push" "Stack"))
+;                                  "Push" "Stack" "Take" "Discard" "Error" "Assert"))
 
 ((identifier) @operator (#match? @operator "^(\\+|-|\\*|/|>|<|<=|>=|==|!=)$"))
 
