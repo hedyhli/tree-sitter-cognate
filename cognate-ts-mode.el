@@ -70,16 +70,19 @@
     "Reverse" "Twin" "Drop" "Swap" "Case" "When"
     "Do" "Map" "Range" "Read-file" "Unbox" "Floor"
     "Ceiling" "Round" "Ln" "Log" "Triplet" "Head"
-    "Tail" "First" "Rest" "Sin" "Cos" "Tan" "Asin"
-    "Acos" "Atan" "Sind" "Cosd" "Tand" "Asind"
-    "Acosd" "Atand" "Sinh" "Cosh" "Tanh" "Sinhd"
-    "Coshd" "Tanhd" "Filter" "Number?" "Zero?"
-    "Empty?" "Empty" "Any?" "None" "All" "Sort"
-    "Append" "Prepend" "Min" "Max" "Times"
-    "Integer!" "Number!" "Boolean!" "Block!"
-    "Zero!" "String!" "List!" "Symbol!" "Push"
-    "Index" "Length" "Stack" "Take" "Discard" "Error"
-    "Assert" "Clear" "Input" "Open" "Close")
+    "Tail" "First" "Rest" "Index" "Length" "Sin"
+    "Cos" "Tan" "Asin" "Acos" "Atan" "Sind" "Cosd"
+    "Tand" "Asind" "Acosd" "Atand" "Sinh" "Cosh"
+    "Tanh" "Sinhd" "Coshd" "Tanhd" "Filter"
+    "Number?" "Zero?" "Empty?" "Empty" "Any?"
+    "None" "All" "Sort" "Append" "Prepend" "Min"
+    "Max" "Times" "Integer!" "Number!" "Boolean!"
+    "Block!" "Zero!" "String!" "List!" "Symbol!"
+    "Push" "Stack" "Take" "Discard" "Error"
+    "Assert" "Clear" "Open" "Close" "Input"
+    "List?" "String?" "Boolean?" "Integer?"
+    "Block?" "Zero?"
+    )
   "Cognate built-in functions for font-locking.")
 
 (defvar cognate-ts-mode--types

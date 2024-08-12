@@ -132,6 +132,7 @@ highlighting: <https://github.com/cognate-lang/cognate-vim>.
 - [x] String escapes.
 - [ ] Case insensitivity for indentifiers (booleans in grammar, keywords
   everywhere else)
+- [ ] Use cognac's `builtins.c` rather than hardcoding builtins
 
 ## References
 
