@@ -82,12 +82,12 @@
     "Assert" "Clear" "Open" "Close" "Input"
     "List?" "String?" "Boolean?" "Integer?"
     "Block?" "Zero?" "String-length" "Substring"
-    "Regex"
+    "Regex" "Ordinal" "Character"
     )
   "Cognate built-in functions for font-locking.")
 
 (defvar cognate-ts-mode--types
-  '("List" "Box" "Regex" "Character" "Number"))
+  '("List" "Box" "Number"))
 
 (defvar cognate--treesit-settings
   (treesit-font-lock-rules

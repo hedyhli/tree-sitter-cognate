@@ -41,9 +41,8 @@
                                  "Assert" "Clear" "Open" "Close" "Input"
                                  "List?" "String?" "Boolean?" "Integer?"
                                  "Block?" "Zero?" "String-length" "Substring"
-                                 "Regex"
+                                 "Regex" "Character" "Ordinal"
                                  ))
 ((identifier) @operator (#any-of? @operator "+" "-" "*" "/" ">" "<" "<=" ">="
                          "==" "!=" "Modulo" "Exp" "Not" "And" "Or" "Xor"))
-((identifier) @type.builtin (#any-of? @type.builtin "List" "Box" "Regex"
-                             "Character" "Number"))
+((identifier) @type.builtin (#any-of? @type.builtin "List" "Box" "Number"))
