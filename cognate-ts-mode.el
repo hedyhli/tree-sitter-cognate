@@ -81,7 +81,8 @@
     "Push" "Stack" "Take" "Discard" "Error"
     "Assert" "Clear" "Open" "Close" "Input"
     "List?" "String?" "Boolean?" "Integer?"
-    "Block?" "Zero?"
+    "Block?" "Zero?" "String-length" "Substring"
+    "Regex"
     )
   "Cognate built-in functions for font-locking.")
 

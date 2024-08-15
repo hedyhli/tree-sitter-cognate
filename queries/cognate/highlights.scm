@@ -40,7 +40,8 @@
                                  "Push" "Stack" "Take" "Discard" "Error"
                                  "Assert" "Clear" "Open" "Close" "Input"
                                  "List?" "String?" "Boolean?" "Integer?"
-                                 "Block?" "Zero?"
+                                 "Block?" "Zero?" "String-length" "Substring"
+                                 "Regex"
                                  ))
 ((identifier) @operator (#any-of? @operator "+" "-" "*" "/" ">" "<" "<=" ">="
                          "==" "!=" "Modulo" "Exp" "Not" "And" "Or" "Xor"))
