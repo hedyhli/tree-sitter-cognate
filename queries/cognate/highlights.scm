@@ -41,7 +41,7 @@
                                  "Assert" "Clear" "Open" "Close" "Input"
                                  "List?" "String?" "Boolean?" "Integer?"
                                  "Block?" "Zero?" "String-length" "Substring"
-                                 "Regex" "Character" "Ordinal"
+                                 "Regex" "Character" "Ordinal" "Split"
                                  ))
 ((identifier) @operator (#any-of? @operator "+" "-" "*" "/" ">" "<" "<=" ">="
                          "==" "!=" "Modulo" "Exp" "Not" "And" "Or" "Xor"))

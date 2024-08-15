@@ -82,7 +82,7 @@
     "Assert" "Clear" "Open" "Close" "Input"
     "List?" "String?" "Boolean?" "Integer?"
     "Block?" "Zero?" "String-length" "Substring"
-    "Regex" "Ordinal" "Character"
+    "Regex" "Ordinal" "Character" "Split"
     )
   "Cognate built-in functions for font-locking.")
 
