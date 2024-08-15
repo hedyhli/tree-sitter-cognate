@@ -1,5 +1,7 @@
 # tree-sitter-cognate
 
+[What is Cognate?](https://cognate-lang.github.io)
+
 <img src="https://raw.githubusercontent.com/hedyhli/tree-sitter-cognate/main/screenshot.png" width=500/>
 
 The official regex-based highlighting plugins are great, but for a wider
