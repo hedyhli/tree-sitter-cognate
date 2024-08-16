@@ -5,7 +5,7 @@ build:
   make
 
 wasm:
-  tree-sitter build --wasm
+  pnpm tree-sitter build --wasm
 
 test:
   pnpm test
