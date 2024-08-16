@@ -40,5 +40,8 @@ jobs:
       - name: test
         run: just test
 
+      - name: setup emscripten
+        uses: mymindstorm/setup-emsdk@v14
+
       - name: build wasm
         run: just wasm
