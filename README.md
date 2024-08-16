@@ -1,5 +1,7 @@
 # tree-sitter-cognate
 
+[![Checks](https://github.com/hedyhli/tree-sitter-cognate/actions/workflows/checks.yml/badge.svg)](https://github.com/hedyhli/tree-sitter-cognate/actions/workflows/checks.yml)
+
 [What is Cognate?](https://cognate-lang.github.io)
 
 <img src="https://raw.githubusercontent.com/hedyhli/tree-sitter-cognate/main/screenshot.png" width=500/>
