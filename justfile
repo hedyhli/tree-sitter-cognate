@@ -1,15 +1,14 @@
 set shell := ["bash", "-c"]
 
 build:
-  tree-sitter gen
-  tree-sitter build
+  pnpm build
   make
 
 wasm:
   tree-sitter build --wasm
 
 test:
-  tree-sitter test
+  pnpm test
 
 # Link queries and parser for neovim
 inspect-setup:

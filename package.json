@@ -5,7 +5,8 @@
   "main": "bindings/node",
   "types": "bindings/node",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "tree-sitter test",
+    "build": "tree-sitter gen && tree-sitter build",
     "install": "node-gyp-build",
     "prebuildify": "prebuildify --napi --strip"
   },
@@ -22,7 +23,7 @@
   "license": "MIT",
   "dependencies": {
     "node-addon-api": "^7.1.0",
-    "node-gyp-build": "^4.8.0"
+    "node-gyp-build": "^4.8.1"
   },
   "peerDependencies": {
     "tree-sitter": "^0.21.0"
@@ -33,13 +34,17 @@
     }
   },
   "devDependencies": {
-    "prebuildify": "^6.0.0"
+    "prebuildify": "^6.0.0",
+    "tree-sitter-cli": "^0.22.6"
   },
   "tree-sitter": [
     {
       "scope": "source.cog",
       "injection-regex": "^cognate$",
-      "file-types": ["cog", "cognate"],
+      "file-types": [
+        "cog",
+        "cognate"
+      ],
       "highlights": "queries/cognate/highlights.scm"
     }
   ]
