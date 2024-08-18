@@ -36,7 +36,7 @@
 
 ;; TODO: highlight builtins
 ((identifier) @keyword.builtin
- (#match? @keyword.builtin "^(Path|Close|Read-file|Open|Input|Parameters|Get|Insert|Dict|Tanh|Cosh|Sinh|Tanhd|Coshd|Sinhd|Atan|Acos|Asin|Atand|Acosd|Asind|Ln|Log|Exp|Tan|Cos|Sin|Tand|Cosd|Sind|Begin|Debug|Set|Unbox|Box|Clear|Stack|Show|Stop|Wait|Number|List|Error|Ceiling|Round|Floor|Uppercase|Split|Character|Ordinal|Regex|Substring|String-length|Join|Empty\\?|Push|Tail|Head|Rest|First|Boolean!|Block!|String!|List!|Any!|Zero!|Integer!|Io!|Symbol!|Number!|Boolean\\?|Block\\?|String\\?|List\\?|Any\\?|Zero\\?|Integer\\?|Symbol\\?|Io\\?|Number\\?|Not|Xor|And|Or|Sqrt|Modulo|Random|Do|Put|Print|Match|False|True|Empty|Drop|Prepend|Index|All|Discard|None|Append|Swap|Fold|Prints|Times|Range|Twin|Take|Triplet|Min|Reverse|Filter|Max|When|Case|Map|Puts|Sort|Assert|Length|)$"))
+ (#match? @keyword.builtin "^(Path|Close|Read-file|Open|Input|Parameters|Get|Insert|Dict|Tanh|Cosh|Sinh|Tanhd|Coshd|Sinhd|Atan|Acos|Asin|Atand|Acosd|Asind|Ln|Log|Exp|Tan|Cos|Sin|Tand|Cosd|Sind|Begin|Debug|Set|Unbox|Box|Clear|Stack|Show|Stop|Wait|Number|List|Error|Ceiling|Round|Floor|Split|Character|Ordinal|Regex|Substring|String-length|Join|Empty\\?|Push|Tail|Head|Rest|First|Boolean!|Block!|String!|List!|Any!|Zero!|Integer!|Io!|Symbol!|Number!|Boolean\\?|Block\\?|String\\?|List\\?|Any\\?|Zero\\?|Integer\\?|Symbol\\?|Io\\?|Number\\?|Not|Xor|And|Or|Sqrt|Modulo|Random|Do|Put|Print|Match|False|True|Empty|Drop|Prepend|Index|All|Discard|None|Append|Swap|Fold|Prints|Times|Range|Twin|Take|Triplet|Min|Reverse|Filter|Max|When|Case|Map|Puts|Sort|Assert|Length|)$"))
 
 ((identifier) @operator (#match? @operator "^(\\+|-|\\*|/|>|<|<=|>=|==|!=)$"))
 
