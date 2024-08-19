@@ -60,17 +60,16 @@
   "Cognate builtin keywords for font-locking.")
 
 (defvar cognate-ts-mode--operators
-  '("+" "-" "*" "/" ">" "<" "<=" ">="
-    "==" "!=" "Modulo" "Exp" "Not" "And"
-    "Or" "Xor")
+  '("+" "-" "*" "/" ">" "<" "<=" ">=" "^"
+    "==" "!=" "Not" "And" "Or" "Xor")
   "Cognate operators for font-locking.")
 
 (defvar cognate-ts-mode--builtins
-  '("Empty" "Match" "Print" "Put" "Do" "Random" "Sqrt" "Number?" "Io?" "Symbol?" "Integer?" "Zero?" "Any?" "List?" "String?" "Block?" "Boolean?" "Number!" "Symbol!" "Io!" "Integer!" "Zero!" "Any!" "List!" "String!" "Block!" "Boolean!" "First" "Rest" "Head" "Tail" "Push" "Empty?" "Join" "String-length" "Substring" "Regex" "Ordinal" "Character" "Split" "Uppercase" "Floor" "Round" "Ceiling" "Error" "Wait" "Stop" "Show" "Stack" "Clear" "Unbox" "Set" "Debug" "Begin" "Sind" "Cosd" "Tand" "Sin" "Cos" "Tan" "Log" "Ln" "Asind" "Acosd" "Atand" "Asin" "Acos" "Atan" "Sinhd" "Coshd" "Tanhd" "Sinh" "Cosh" "Tanh" "Dict" "Insert" "Get" "Parameters" "Input" "Open" "Read-file" "Close" "Path" "Drop" "Prepend" "Index" "All" "Discard" "None" "Append" "Swap" "Fold" "Prints" "Times" "Range" "Twin" "Take" "Triplet" "Min" "Reverse" "Filter" "Max" "When" "Case" "Map" "Puts" "Sort" "Assert" "Length")
+  '("Empty" "Match" "Print" "Put" "Do" "Random" "Modulo" "Sqrt" "Integer?" "Zero?" "Integer!" "Zero!" "First" "Rest" "Head" "Tail" "Push" "Empty?" "Join" "String-length" "Substring" "Regex" "Ordinal" "Character" "Split" "Floor" "Round" "Ceiling" "Error" "Wait" "Stop" "Show" "Stack" "Clear" "Unbox" "Set" "Debug" "Begin" "Sind" "Cosd" "Tand" "Sin" "Cos" "Tan" "Exp" "Log" "Ln" "Asind" "Acosd" "Atand" "Asin" "Acos" "Atan" "Sinhd" "Coshd" "Tanhd" "Sinh" "Cosh" "Tanh" "Dict" "Insert" "Get" "Parameters" "Input" "Open" "Read-file" "Close" "Path" "Drop" "Prepend" "Index" "All" "Discard" "None" "Append" "Swap" "Fold" "Prints" "Times" "Range" "Twin" "Take" "Triplet" "Min" "Reverse" "Filter" "Max" "When" "Case" "Map" "Puts" "Sort" "Assert" "Length")
   "Cognate built-in functions for font-locking.")
 
 (defvar cognate-ts-mode--types
-  '("List" "Box" "Number"))
+  '("List" "Box" "Number" "Number!" "String!" "List!" "Block!" "Symbol!" "Boolean!" "Box!" "Io!" "Any!" "Number?" "String?" "List?" "Block?" "Symbol?" "Boolean?" "Box?" "Io?" "Any?"))
 
 (defvar cognate--treesit-settings
   (treesit-font-lock-rules
