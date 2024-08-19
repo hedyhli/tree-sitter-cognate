@@ -10,7 +10,7 @@
 
 
 ["(" ")"] @punctuation.bracket
-";" @punctuation.delimiter
+";" @punctuation.special
 
 (statement
  (identifier) @keyword.storage (#eq? @keyword.storage "Def")
