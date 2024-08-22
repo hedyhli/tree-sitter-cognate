@@ -1,0 +1,21 @@
+{
+  "name": "tree-sitter-cognate",
+  "displayName": "Tree Sitter Cognate",
+  "version": "0.1.0",
+  "description": "",
+  "author": "",
+  "license": "MIT",
+  "engines": {
+	"vscode": "^1.63.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "cognate",
+      "aliases": ["Cognate", "cognate"],
+      "extensions": [".cog"]
+    }]
+  }
+}
