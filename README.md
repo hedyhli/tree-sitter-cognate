@@ -126,16 +126,20 @@ under the **`helix/`** directory in this repository.
 
 - [X] Highlights
 
-First install tree-sitter support for VSCode from [here](https://github.com/AlecGhost/tree-sitter-vscode). Then install the `tree-sitter-cognate.vsix` extension from this repository to add support for detecting Cognate files.
+First, install the [tree-sitter extension for VS
+Code](https://github.com/AlecGhost/tree-sitter-vscode). Next install the
+`tree-sitter-cognate.vsix` extension from this repository to add support for
+detecting Cognate files.
 
-Then in the root directory of this repository, run `tree-sitter build-wasm` to create `tree-sitter-cognate.wasm`.
+Clone this repository locally somewhere, then add these lines to your
+`settings.json`, specifying the absolute path to where you've cloned this
+repository:
 
-Finally, add these lines to your `settings.json`:
 ```json
 "tree-sitter-vscode.languageConfigs": [{
     "lang": "cognate",
     "parser": "[PATH_TO_THIS_REPOSITORY]/tree-sitter-cognate.wasm",
-    "highlights": "[PATH_TO_THIS_REPOSITORY]/queries/cognate/highlights.scm",
+    "highlights": "[PATH_TO_THIS_REPOSITORY]/queries/cognate/highlights.scm"
 }]
 ```
 

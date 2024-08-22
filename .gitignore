@@ -35,6 +35,8 @@ dist/
 
 # Grammar volatiles
 *.wasm
+!tree-sitter-cognate.wasm
 *.obj
 *.o
+
 .nvim.lua
