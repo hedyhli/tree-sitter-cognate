@@ -126,14 +126,15 @@ under the **`helix/`** directory in this repository.
 
 - [X] Highlights
 
-First, install the [tree-sitter extension for VS
-Code](https://github.com/AlecGhost/tree-sitter-vscode). Next install the
-`tree-sitter-cognate.vsix` extension from this repository to add support for
-detecting Cognate files.
+First, ensure the [tree-sitter extension for VS
+Code](https://github.com/AlecGhost/tree-sitter-vscode) is installed.
+
+Next download the
+`tree-sitter-cognate.vsix` file from this repository to add support for
+detecting Cognate files, and install it as an extension.
 
 Clone this repository locally somewhere, then add these lines to your
-`settings.json`, specifying the absolute path to where you've cloned this
-repository:
+`settings.json`:
 
 ```json
 "tree-sitter-vscode.languageConfigs": [{
