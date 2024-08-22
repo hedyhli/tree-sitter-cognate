@@ -122,6 +122,23 @@ runtime directory. For instance, `helix/queries/cognate` (of this repo) to
 `~/.config/helix/runtime/queries/cognate`. Note that Helix should use queries
 under the **`helix/`** directory in this repository.
 
+### VSCode
+
+- [X] Highlights
+
+First install tree-sitter support for VSCode from [here](https://github.com/AlecGhost/tree-sitter-vscode). Then install the `tree-sitter-cognate.vsix` extension from this repository to add support for detecting Cognate files.
+
+Then in the root directory of this repository, run `tree-sitter build-wasm` to create `tree-sitter-cognate.wasm`.
+
+Finally, add these lines to your `settings.json`:
+```json
+"tree-sitter-vscode.languageConfigs": [{
+    "lang": "cognate",
+    "parser": "[PATH_TO_THIS_REPOSITORY]/tree-sitter-cognate.wasm",
+    "highlights": "[PATH_TO_THIS_REPOSITORY]/queries/cognate/highlights.scm",
+}]
+```
+
 ### Vim
 
 Consider using the official vim plugin for vim's regex-based syntax
