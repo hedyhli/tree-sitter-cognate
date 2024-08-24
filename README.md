@@ -4,7 +4,7 @@
 
 [What is Cognate?](https://cognate-lang.github.io)
 
-<img src="https://raw.githubusercontent.com/hedyhli/tree-sitter-cognate/main/demo.png" width=500/>
+<img src="https://raw.githubusercontent.com/hedyhli/tree-sitter-cognate/main/demo.png" width=800/>
 
 The official regex-based highlighting plugins are great, but for a wider
 reach of editor support a tree-sitter grammar is needed which gives way to
