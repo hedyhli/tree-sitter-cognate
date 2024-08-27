@@ -35,7 +35,7 @@
  (#match? @keyword.control "^(With)$"))
 
 ((identifier) @function.builtin
- (#match? @function.builtin "^(Empty|Match|Print|Put|Do|Random|Modulo|Sqrt|Integer\\?|Zero\\?|Zero!|First|Rest|Head|Tail|Push|Empty\\?|Join|String-length|Substring|Regex|Regex-match|Ordinal|Character|Split|Uppercase|Lowercase|Floor|Round|Ceiling|Abs|Error|Wait|Stop|Show|Stack|Clear|Unbox|Set|Debug|Begin|Sind|Cosd|Tand|Sin|Cos|Tan|Exp|Log|Ln|Asind|Acosd|Atand|Asin|Acos|Atan|Sinhd|Coshd|Tanhd|Sinh|Cosh|Tanh|Dict|Insert|Get|Parameters|Input|Open|Read-file|Close|Path|Drop|Prepend|Index|All|Discard|None|Append|Swap|Fold|Prints|Times|Range|Twin|Take|Triplet|Min|Reverse|Filter|Max|When|Case|Map|Puts|Sort|Assert|Length|Of|)$"))
+ (#match? @function.builtin "^(Empty|Match|Print|Put|Do|Random|Modulo|Sqrt|Integer\\?|Zero\\?|First|Rest|Head|Tail|Push|Empty\\?|Join|String-length|Substring|Regex|Regex-match|Ordinal|Character|Split|Uppercase|Lowercase|Floor|Round|Ceiling|Abs|Error|Wait|Stop|Show|Stack|Clear|Unbox|Set|Debug|Begin|Sind|Cosd|Tand|Sin|Cos|Tan|Exp|Log|Ln|Asind|Acosd|Atand|Asin|Acos|Atan|Sinhd|Coshd|Tanhd|Sinh|Cosh|Tanh|Dict|Insert|Get|Parameters|Input|Open|Read-file|Close|Path|Drop|Prepend|Index|All|Discard|None|Append|Swap|Fold|Prints|Times|Range|Twin|Take|Triplet|Min|Reverse|Filter|Max|When|Case|Map|Puts|Sort|Assert|Length|Of|)$"))
 
 ((identifier) @operator (#match? @operator "^(\\+|-|\\*|/|>|<|<=|>=|==|!=|\\^)$"))
 
