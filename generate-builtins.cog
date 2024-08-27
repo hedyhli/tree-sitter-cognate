@@ -1,5 +1,5 @@
 Let Ignored List ("If" "+" "-" "*" "/" ">" "<" "<=" ">=" "==" "!=" "^" "Not" "And" "Or" "Xor" "List" "Number" "Box" "True" "False" "Number!" "String!" "List!" "Block!" "Symbol!" "Boolean!" "Box!" "Io!" "Any!" "Number?" "String?" "List?" "Block?" "Symbol?" "Boolean?" "Box?" "Io?" "Any?");
-Let Include List ("Drop" "Prepend" "Index" "All" "Discard" "None" "Append" "Swap" "Fold" "Prints" "Times" "Range" "Twin" "Take" "Triplet" "Min" "Reverse" "Filter" "Max" "When" "Case" "Map" "Puts" "Sort" "Assert" "Length");
+Let Include List ("Drop" "Prepend" "Index" "All" "Discard" "None" "Append" "Swap" "Fold" "Prints" "Times" "Range" "Twin" "Take" "Triplet" "Min" "Reverse" "Filter" "Max" "When" "Case" "Map" "Puts" "Sort" "Assert" "Length" "Of");
 
 Def Get-name as Regex-match of "^{\\.name=\"(.+)\"";
 Def In as (Let L; Let X; Not None (== X) in L);
