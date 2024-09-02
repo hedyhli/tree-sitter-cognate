@@ -34,4 +34,4 @@
 (statement (
   (identifier) @function.builtin (#eq? @function.builtin ".")
   .
-  (identifier) @field))
+  (identifier) @variable.member))
