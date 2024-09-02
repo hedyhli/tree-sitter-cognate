@@ -64,6 +64,7 @@ Statements >1 literals & idents
 
 Print + 1 2;
 Print "abc";
+Print . .1 ..1;
 
 ---
 
@@ -75,5 +76,10 @@ Print "abc";
     (number))
   (statement
     (identifier)
-    (string)))
+    (string))
+  (statement
+    (identifier)
+    (identifier)
+    (identifier)
+    (identifier)))
 

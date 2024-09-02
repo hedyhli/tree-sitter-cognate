@@ -40,7 +40,7 @@ module.exports = grammar({
 
     _literal: $ => choice($.number, $.string, $.symbol, $.boolean),
 
-    identifier: $ => /[A-Z-?!'+/*>=<^][a-zA-Z0-9-?!'+/*>=<^]*/,
+    identifier: $ => /[A-Z-?!'+/*>=<^\.][a-zA-Z0-9-?!'+/*>=<^\.]*/,
 
     /* Others */
     line_comment: $ => token(seq('~~', /[^\r\n]*/)),

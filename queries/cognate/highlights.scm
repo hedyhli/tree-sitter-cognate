@@ -28,3 +28,8 @@
 ((identifier) @operator (#any-of? @operator "+" "-" "*" "/" ">" "<" "<=" ">=" "^"
                          "==" "!=" "Not" "And" "Or" "Xor"))
 ((identifier) @type.builtin (#any-of? @type.builtin "List" "Box" "Number" "Number!" "String!" "List!" "Block!" "Symbol!" "Boolean!" "Box!" "Io!" "Any!" "Number?" "String?" "List?" "Block?" "Symbol?" "Boolean?" "Box?" "Io?" "Any?"))
+
+(statement (
+  (identifier) @function.builtin (#eq? @function.builtin ".")
+  .
+  (identifier) @field))

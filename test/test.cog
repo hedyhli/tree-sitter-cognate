@@ -6,6 +6,11 @@ Print " \' \" \a \b \c \d \e \f \g \n ~ ~~" "~" "~~";
 If <= > != == / * + - 1 2;
 Let While Unless Until;
 
+~~ Field and variables
+Let Field \foo;
+Table (\foo "bar");
+Print . Field;
+
 ~~ NOTE: Line comment
 ~~ TODO: Another line comment
 

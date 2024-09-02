@@ -203,7 +203,7 @@
     },
     "identifier": {
       "type": "PATTERN",
-      "value": "[A-Z-?!'+/*>=<^][a-zA-Z0-9-?!'+/*>=<^]*"
+      "value": "[A-Z-?!'+/*>=<^\\.][a-zA-Z0-9-?!'+/*>=<^\\.]*"
     },
     "line_comment": {
       "type": "TOKEN",
