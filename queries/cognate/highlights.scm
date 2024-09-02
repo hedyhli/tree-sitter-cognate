@@ -10,6 +10,8 @@
 
 ["(" ")"] @punctuation.bracket
 
+(identifier) @variable
+
 (statement
  (identifier) @keyword (#eq? @keyword "Def")
  .

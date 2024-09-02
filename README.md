@@ -17,6 +17,9 @@ a more unified approach to supporting indents and code-folding rules.
 Note that the built-in tree-sitter support requires Nvim 0.9+.
 
 - [X] Highlights
+  - [X] Identifiers fallback as variables
+  - [X] Function name after `Def`
+  - [X] Field name after `.`
 - [X] Toggle line comments
 - [X] Toggle block comments (for `Comment.nvim` and `kommentary`)
 - [X] Injection language for comments
@@ -55,6 +58,9 @@ into your `ensure_installed`, or run `:TSInstall cognate`.
 ### Emacs
 
 - [X] Highlights
+  - [ ] Identifiers fallback as variables
+  - [ ] Function name after `Def`
+  - [ ] Field name after `.`
 - [X] Toggle line comments
 - [ ] Toggle block comments
 - [X] Indents
@@ -99,6 +105,9 @@ up to automatically use `cognate-ts-mode`.
 ### Helix
 
 - [X] Highlights
+  - [X] Identifiers fallback as variables
+  - [X] Function name after `Def`
+  - [X] Field name after `.`
 - [X] Toggle line comments
 - [X] Toggle block comments
 - [X] Injection language for comments
@@ -158,7 +167,8 @@ highlighting: <https://github.com/cognate-lang/cognate-vim>.
 - [x] String escapes.
 - [ ] Case insensitivity for indentifiers (booleans in grammar, keywords
   everywhere else)
-- [ ] Use cognac's `builtins.c` rather than hardcoding builtins
+- [x] Use cognac's `builtins.c` rather than hardcoding builtins
+- [x] Support functions and fields for emacs
 
 ## References
 
