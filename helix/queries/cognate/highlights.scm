@@ -4,7 +4,7 @@
 (symbol) @string.special.symbol
 (boolean) @constant.builtin.boolean
 
-(inline_comment) @comment
+(inline_comment) @comment.inline
 (line_comment) @comment.line
 (multiline_comment) @comment.block
 

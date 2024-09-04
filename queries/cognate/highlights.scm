@@ -4,7 +4,8 @@
 (symbol) @constant
 (boolean) @boolean
 
-[(inline_comment) (line_comment) (multiline_comment)] @comment
+[(line_comment) (multiline_comment)] @comment
+(inline_comment) @comment.inline
 
 ";" @punctuation.special
 
