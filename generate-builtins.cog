@@ -18,7 +18,7 @@ Def Filter-map (
 	Reverse;
 );
 
-With "src/builtins.c" "r" (
+With \read "src/builtins.c" (
     Read-file;
     Split on "\n";
 

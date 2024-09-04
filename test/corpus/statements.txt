@@ -65,6 +65,7 @@ Statements >1 literals & idents
 Print + 1 2;
 Print "abc";
 Print . .1 ..1;
+"foo" . \bar;
 
 ---
 
@@ -81,5 +82,9 @@ Print . .1 ..1;
     (identifier)
     (identifier)
     (identifier)
-    (identifier)))
+    (identifier))
+  (statement
+    (string)
+    (identifier)
+    (symbol)))
 
