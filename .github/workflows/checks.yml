@@ -1,14 +1,19 @@
 name: Checks
 on:
-  push: {}
+  workflow_dispatch:
+  push:
+    paths:
+      - src/**
+      - test/**
+      - justfile
+      - package.json
+      - pnpm-lock.yaml
   pull_request:
     branches:
       - main
 jobs:
   main:
     name: install
-    if: github.event_name != 'push' || contains(toJSON(github.event.commits.*.modified), 'src') || contains(toJSON(github.event.commits.*.added), 'test') || contains(toJSON(github.event.commits.*.modified), 'test') || contains(toJSON(github.event.commits.*.removed), 'test') || contains(toJSON(github.event.commits.*.modified), 'justfile')
-
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
