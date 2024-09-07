@@ -5,12 +5,14 @@ Line comments
 Print;
 ~~ Hello
 ~~Hi
+~~ Test ~~
 
 ---
 
 (source_file
   (statement
     (identifier))
+  (line_comment)
   (line_comment)
   (line_comment))
 
