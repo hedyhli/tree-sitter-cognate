@@ -32,7 +32,7 @@
  (#match? @keyword.control.repeat "^(For|While|Take-while|Until)$"))
 
 ((identifier) @keyword.control
- (#match? @keyword.control "^(With)$"))
+ (#match? @keyword.control "^(With|Do)$"))
 
 ((identifier) @function.builtin
  (#match? @function.builtin
