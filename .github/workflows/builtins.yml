@@ -1,5 +1,10 @@
 name: Auto-update builtins list
 on:
+  push:
+    paths:
+      - generate-builtins.cog
+      - .github/workflows/builtins.yml
+      - justfile
   workflow_dispatch:
   schedule:
     - cron:  '0 0 * * 1,4' # Two times a week
@@ -21,7 +26,7 @@ jobs:
           cd ..
           git clone https://github.com/cognate-lang/cognate
           cd cognate
-          make CC=gcc PREFIX=. install
+          make CC=gcc
           
       - name: generate
         run: just update-builtins
