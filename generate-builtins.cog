@@ -34,7 +34,7 @@ Def String-map (
 	) else (Drop; I) S;
 );
 
-With \read "src/builtins.c" (
+With \read "builtins.c" (
     Read-file;
     Split on "\n";
 

@@ -45,3 +45,11 @@ inspect-setup:
 # InspectTree using nvim-treesitter
 inspect:
   nvim "+InspectTree" test/test.cog
+
+update-builtins:
+  ../cognate/cognac generate-builtins.cog
+  cp ../cognate/src/builtins.c builtins.c
+  ./generate-builtins | awk -v nvim=queries/cognate/highlights.scm -v helix=helix/queries/cognate/highlights.scm -v emacs=cognate-ts-mode.el -f update-builtins.awk
+  rm builtins.c
+  rm generate-builtins
+  rm generate-builtins.c
