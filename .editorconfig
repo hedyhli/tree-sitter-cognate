@@ -2,3 +2,6 @@
 indent_size = 2
 [*.md]
 indent_size = 2
+[*.cog]
+indent_style = space
+indent_size = 4

@@ -5,17 +5,17 @@ Def Get-name as Regex-match of "^\\{\\.name=\"(.+)\"";
 Def In as (Let L; Let X; Not None (== X) in L);
 
 Def Filter-map (
-	Let Exclude;
-	Def Pred;
-	Let L be a List!;
+    Let Exclude;
+    Def Pred;
+    Let L be a List!;
 
     Empty;
-	For each in L (
-		Let Item;
-		Let R be Pred Item;
-		When != Exclude R ( Push R );
-	);
-	Reverse;
+    For each in L (
+        Let Item;
+        Let R be Pred Item;
+        When != Exclude R ( Push R );
+    );
+    Reverse;
 );
 
 ~
