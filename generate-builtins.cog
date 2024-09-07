@@ -4,18 +4,13 @@ Let Include List ("Drop" "Prepend" "Index" "All" "Discard" "None" "Append" "Swap
 Def Get-name as Regex-match of "^\\{\\.name=\"(.+)\"";
 Def In as (Let L; Let X; Not None (== X) in L);
 
-Def Filter-map (
-    Let Exclude;
-    Def Pred;
-    Let L be a List!;
+Def Asymmetric-map (
+    Let F;
+    Let L be Of (List?);
 
-    Empty;
-    For each in L (
-        Let Item;
-        Let R be Pred Item;
-        When != Exclude R ( Push R );
+    return Reverse List (
+        For each in L do F;
     );
-    Reverse;
 );
 
 ~
@@ -38,10 +33,9 @@ With \read "builtins.c" (
     Read-file;
     Split on "\n";
 
-    Filter-map for \ignore (
+    Asymmetric-map (
         Let Matched be Get-name;
-        Do If Not Matched then (\ignore it)
-        else (
+        When Matched (
             Twin;
             Swap Rest;
             Join Uppercase First;
