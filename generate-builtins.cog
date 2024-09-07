@@ -18,6 +18,22 @@ Def Filter-map (
 	Reverse;
 );
 
+~
+String-map (do something on each char) "full string" "";
+~
+Def String-map (
+	Let F as Block!;
+	Let S;
+	Let I;
+
+	Do Case (Not == "") then (
+		First;
+		Do F;
+		Join I;
+		String-map F Rest S;
+	) else (Drop; I) S;
+);
+
 With \read "src/builtins.c" (
     Read-file;
     Split on "\n";
@@ -35,7 +51,9 @@ With \read "src/builtins.c" (
 );
 
 Append Include list;
-Twin it;
+Triplet;
+
+Let Size be Length;
 
 ~~ Scheme/elisp syntax lists
 For Swap (
@@ -48,11 +66,20 @@ For Swap (
 Print "";
 
 ~~ Regex patterns for Helix
+Let I Box 0;
 Put "\"^(";
 For Swap (
-    ~~ TODO: Escape regex special characters '?'
+	Set I be + Unbox I 1;
+
+	Let Name;
+	String-map
+		Case (Or == "?" Swap == "." Twin) then (Join "\\\\")
+		else () Name from "";
+
     Put;
-    Put "|";
+	Unless == Unbox I eq Size (
+	    Put "|";
+	);
 );
 Put ")$\"";
 
