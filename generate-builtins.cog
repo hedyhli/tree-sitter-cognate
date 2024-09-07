@@ -27,8 +27,8 @@ With \read "src/builtins.c" (
         Do If Not Matched then (\ignore it)
         else (
             Twin;
-            Swap Tail;
-            Join Uppercase Head;
+            Swap Rest;
+            Join Uppercase First;
         );
     );
     Filter by (Not In Ignored);
