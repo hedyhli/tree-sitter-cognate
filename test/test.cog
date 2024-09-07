@@ -33,7 +33,7 @@ Def A ();
 A 1 2 3 Number List Box;
 
 ~~ Nested blocks
-(
+Do (
     ~~ Long function for testing treesitter-context
     Def B (
         Print 0;
