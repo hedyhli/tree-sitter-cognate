@@ -1,0 +1,36 @@
+name: Auto-update builtins list
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '0 0 * * 1,4' # Two times a week
+
+jobs:
+  main:
+    name: update
+    runs-on: ubuntu-24.04 
+
+    steps:
+      - name: git checkout
+        uses: actions/checkout@v4
+
+      - name: setup just
+        uses: extractions/setup-just@v1
+
+      - name: setup cognac
+        run: |
+          cd ..
+          git clone https://github.com/cognate-lang/cognate
+          cd cognate
+          make CC=gcc PREFIX=. install
+          
+      - name: generate
+        run: just update-builtins
+
+      - name: commit
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "chore: Auto-update cognate builtins"
+          branch: ${{ github.head_ref }}
+          # Don't commit if no changes are needed
+          skip_dirty_check: false
+
