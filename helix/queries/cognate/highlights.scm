@@ -47,7 +47,7 @@
  (#match? @keyword.operator "^(Not|And|Or|Xor)$"))
 
 ((identifier) @type.builtin
- (#match? @type.builtin "^(List|Box|Number|Number!|String!|List!|Block!|Boolean!|Symbol!|Box!|Io!|Any!|Number\?|String\?|List\?|Block\?|Boolean\?|Symbol\?|Box\?|Io\?|Any\?|)$"))
+ (#match? @type.builtin "^(List|Box|Number|Number!|String!|List!|Block!|Boolean!|Symbol!|Box!|Io!|Any!|Number\\?|String\\?|List\\?|Block\\?|Boolean\\?|Symbol\\?|Box\?|Io\\?|Any\\?|)$"))
 
 (statement (
   (identifier) @function.builtin (#eq? @function.builtin ".")
