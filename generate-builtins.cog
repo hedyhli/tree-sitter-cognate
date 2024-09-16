@@ -24,7 +24,7 @@ Def String-map (
 	Do Case (Not == "") then (
 		First;
 		Do F;
-		Join I;
+		Prepend I;
 		String-map F Rest S;
 	) else (Drop; I) S;
 );
@@ -38,7 +38,7 @@ With \read "builtins.c" (
         When Matched (
             Twin;
             Swap Rest;
-            Join Uppercase First;
+            Prepend Uppercase First;
         );
     );
     Filter by (Not In Ignored);
@@ -51,8 +51,8 @@ Let Size be Length;
 
 ~~ Scheme/elisp syntax lists
 For Swap (
-    Join Swap "\"";
-    Join "\"";
+    Prepend Swap "\"";
+    Prepend "\"";
     Put;
     Put " ";
 );
@@ -67,7 +67,7 @@ For Swap (
 
 	Let Name;
 	String-map
-		Case (Or == "?" Swap == "." Twin) then (Join "\\\\")
+		Case (Or == "?" Swap == "." Twin) then (Prepend "\\\\")
 		else () Name from "";
 
     Put;
