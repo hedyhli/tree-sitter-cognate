@@ -7,7 +7,7 @@ on:
       - justfile
   workflow_dispatch:
   schedule:
-    - cron:  '0 0 * * 1,4' # Two times a week
+    - cron:  '0 0 * * 1' # Every monday
 
 jobs:
   main:
